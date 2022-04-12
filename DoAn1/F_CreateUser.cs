@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DoAn1.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.ManagedDataAccess.Client;
 
 namespace DoAn1
 {
@@ -17,6 +19,26 @@ namespace DoAn1
             InitializeComponent();
         }
 
-        
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txbPassword.Text != txbConfirmPass.Text)
+                { 
+                    MessageBox.Show("Mat khau khong khop!\n\n");
+                    return;
+                }
+                string userName = txbUserName.Text;
+                string pass = txbPassword.Text;
+                
+                string query = "BEGIN proc_CreateUser('" + userName + "','" + pass +  "'); END;";
+                OracleCommand cmd = DataProvider.Instance.ExcuteNonQuery(query);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to create User!\n\n" + ex.Message, "Result");
+            }
+        }
+
     }
 }
