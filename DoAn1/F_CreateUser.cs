@@ -25,18 +25,20 @@ namespace DoAn1
             {
                 if (txbPassword.Text != txbConfirmPass.Text)
                 { 
-                    MessageBox.Show("Mat khau khong khop!\n\n");
+                    MessageBox.Show("Mật khẩu không khớp!\n\n");
                     return;
                 }
                 string userName = txbUserName.Text;
                 string pass = txbPassword.Text;
-                
-                string query = "BEGIN proc_CreateUser('" + userName + "','" + pass +  "'); END;";
+                string query = "BEGIN proc_OracleScript; proc_CreateUser('" + userName + "','" + pass +  "'); END;";
                 OracleCommand cmd = DataProvider.Instance.ExcuteNonQuery(query);
+                MessageBox.Show("User đã được tạo thành công!\n\n", "Kết quả");
+
+                this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Failed to create User!\n\n" + ex.Message, "Result");
+                MessageBox.Show("Không thể tạo User!\n\n" + ex.Message, "Kết quả");
             }
         }
 

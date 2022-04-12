@@ -31,6 +31,7 @@ namespace DoAn1
             F_CreateUser createDialog = new F_CreateUser();
             createDialog.ShowDialog();
             this.Show();
+            F_Manager_Load(sender, e);
         }
 
         private void btnCreateRole_Click(object sender, EventArgs e)
@@ -69,15 +70,16 @@ namespace DoAn1
                 string UserName = dtgvManageUser.CurrentRow.Cells["USERNAME"].Value.ToString();
                 if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
-                    string query = "BEGIN proc_DropUser('" + UserName + "'); END;";
+                    string query = "BEGIN proc_OracleScript; proc_DropUser('" + UserName + "'); END;";
                     OracleCommand cmd = DataProvider.Instance.ExcuteNonQuery(query);
+                    MessageBox.Show("User đã được xóa thành công!\n\n", "Kết quả");
                     F_Manager_Load(sender, e);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Failed to create User!\n\n" + ex.Message, "Result");
+                MessageBox.Show("Không thể xóa user!\n\n" + ex.Message, "Kết quả");
             }
-    }
+        }
     }
 }
