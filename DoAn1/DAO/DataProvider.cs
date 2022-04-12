@@ -53,7 +53,7 @@ namespace DoAn1.DAO
         {
             DataTable dataTable = new DataTable();
 
-            using (OracleConnection connection = GetDBConnection("localhost", 1521, "xe", "SYSTEM", "1234"))
+            using (OracleConnection connection = GetDBConnection("localhost", 1521, "xe", "ADMIN", "1234"))
             {
                 connection.Open();
                 OracleCommand command = new OracleCommand(query, connection);
@@ -82,7 +82,7 @@ namespace DoAn1.DAO
         {
             int data = 0;
 
-            using (OracleConnection connection = GetDBConnection("localhost", 1521, "xe", "SYSTEM", "1234"))
+            using (OracleConnection connection = GetDBConnection("localhost", 1521, "xe", "ADMIN", "1234"))
             {
                 connection.Open();
                 OracleCommand command = new OracleCommand(query, connection);
@@ -110,7 +110,7 @@ namespace DoAn1.DAO
         {
             object data = null;
 
-            using (OracleConnection connection = GetDBConnection("localhost", 1521, "xe", "SYSTEM", "1234"))
+            using (OracleConnection connection = GetDBConnection("localhost", 1521, "xe", "ADMIN", "1234"))
             {
                 connection.Open();
                 OracleCommand command = new OracleCommand(query, connection);

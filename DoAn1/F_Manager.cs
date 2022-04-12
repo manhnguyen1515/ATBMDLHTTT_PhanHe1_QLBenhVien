@@ -39,7 +39,7 @@ namespace DoAn1
 
         private void btnViewUser_Click(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM dba_users";
+            string query = "BEGIN PROC_USERS; END;";
             DataTable data = DataProvider.Instance.ExcuteQuery(query);
             dtgvUsers.DataSource = data;
         }
