@@ -43,7 +43,6 @@ namespace DoAn1
 
         private void btnViewUser_Click(object sender, EventArgs e)
         {
-
             string query = "BEGIN PROC_USERS; END;";
             DataTable data = DataProvider.Instance.ExcuteQuery(query);
             dtgvUsers.DataSource = data;
@@ -51,17 +50,17 @@ namespace DoAn1
 
         private void btnViewUserPrivileges_Click(object sender, EventArgs e)
         {
-            string userName = txbUserName.Text;
-            string query = "BEGIN proc_UserPrivileges('" + userName + "'); END;";
-            DataTable data = DataProvider.Instance.ExcuteQuery(query);
-            dtgvUserPrivileges.DataSource = data;
+            //string userName = txbUserName.Text;
+            //string query = "BEGIN proc_UserPrivileges('" + userName + "'); END;";
+           // DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            //dtgvUserPrivileges.DataSource = data;
         }
 
-        private void btnViewAllUsersPrivileges_Click(object sender, EventArgs e)
+        private void btnAllPrivileges_Click(object sender, EventArgs e)
         {
             string query = "BEGIN proc_Privileges; END;";
             DataTable data = DataProvider.Instance.ExcuteQuery(query);
-            dtgvUserPrivileges.DataSource = data;
+            dtgvPrivileges.DataSource = data;
         }
 
         private void btnDropUser_Click(object sender, EventArgs e)

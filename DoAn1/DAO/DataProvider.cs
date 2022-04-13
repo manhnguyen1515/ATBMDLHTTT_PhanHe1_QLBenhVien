@@ -64,7 +64,7 @@ namespace DoAn1.DAO
                     int i = 0;
                     foreach (string item in listPara)
                     {
-                        if (item.Contains('@'))
+                        if (item.Contains(':'))
                         {
                             command.Parameters.Add(item, parameter[i]);
                             i++;
@@ -94,7 +94,7 @@ namespace DoAn1.DAO
                     int i = 0;
                     foreach (string item in listPara)
                     {
-                        if (item.Contains('@'))
+                        if (item.Contains(':'))
                         {
                             command.Parameters.Add(item, parameter[i]);
                             i++;
