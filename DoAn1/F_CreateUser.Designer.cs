@@ -179,6 +179,7 @@ namespace DoAn1
             this.btnOk.TabIndex = 4;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = false;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // btnCancel
             // 

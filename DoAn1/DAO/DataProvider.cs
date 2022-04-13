@@ -53,6 +53,7 @@ namespace DoAn1.DAO
         {
             DataTable dataTable = new DataTable();
 
+
             using (OracleConnection connection = GetDBConnection("localhost", 1521, "xe", "ADMIN", "1234"))
             {
                 connection.Open();
@@ -78,14 +79,15 @@ namespace DoAn1.DAO
             return dataTable;
         }
 
-        public int ExcuteNonQuery(string query, object[] parameter = null)
+        public OracleCommand ExcuteNonQuery(string query, object[] parameter = null)
         {
+            OracleCommand command;
             int data = 0;
 
             using (OracleConnection connection = GetDBConnection("localhost", 1521, "xe", "ADMIN", "1234"))
             {
                 connection.Open();
-                OracleCommand command = new OracleCommand(query, connection);
+                command = new OracleCommand(query, connection);
                 if (parameter != null)
                 {
                     string[] listPara = query.Split(' ');
@@ -99,11 +101,10 @@ namespace DoAn1.DAO
                         }
                     }
                 }
-
-                data = command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
                 connection.Close();
             }
-            return data;
+            return command;
         }
 
         public object ExcuteScalar(string query, object[] parameter = null)

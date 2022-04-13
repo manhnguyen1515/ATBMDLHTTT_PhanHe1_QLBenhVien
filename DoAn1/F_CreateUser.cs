@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DoAn1.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.ManagedDataAccess.Client;
 
 namespace DoAn1
 {
@@ -17,6 +19,28 @@ namespace DoAn1
             InitializeComponent();
         }
 
-        
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txbPassword.Text != txbConfirmPass.Text)
+                { 
+                    MessageBox.Show("Mật khẩu không khớp!\n\n");
+                    return;
+                }
+                string userName = txbUserName.Text;
+                string pass = txbPassword.Text;
+                string query = "BEGIN proc_OracleScript; proc_CreateUser('" + userName + "','" + pass +  "'); END;";
+                OracleCommand cmd = DataProvider.Instance.ExcuteNonQuery(query);
+                MessageBox.Show("User đã được tạo thành công!\n\n", "Kết quả");
+
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không thể tạo User!\n\n" + ex.Message, "Kết quả");
+            }
+        }
+
     }
 }
