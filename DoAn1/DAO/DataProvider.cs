@@ -63,7 +63,7 @@ namespace DoAn1.DAO
                     int i = 0;
                     foreach (string item in listPara)
                     {
-                        if (item.Contains('@'))
+                        if (item.Contains(':'))
                         {
                             command.Parameters.Add(item, parameter[i]);
                             i++;
@@ -85,16 +85,24 @@ namespace DoAn1.DAO
             using (OracleConnection connection = GetDBConnection("localhost", 1521, "xe", "ADMIN", "1234"))
             {
                 connection.Open();
-                OracleCommand command = new OracleCommand(query, connection);
+                OracleCommand command = new OracleCommand();
+                command.Connection = connection;
+                command.CommandText =
+                    "begin " +
+                    "  execute immediate 'EXEC proc_OracleScript;';" +
+                    "  execute immediate '" + query + "';" +
+                    "end;";
+                command.CommandType = CommandType.Text;
+
                 if (parameter != null)
                 {
                     string[] listPara = query.Split(' ');
                     int i = 0;
                     foreach (string item in listPara)
                     {
-                        if (item.Contains('@'))
+                        if (item.Contains(':'))
                         {
-                            command.Parameters.Add(item, parameter[i]);
+                            command.Parameters.Add(new OracleParameter(item, parameter[i]));
                             i++;
                         }
                     }

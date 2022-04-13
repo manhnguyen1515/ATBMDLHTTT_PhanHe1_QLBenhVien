@@ -26,8 +26,11 @@ namespace DoAn1
         private void btnCreateUser_Click(object sender, EventArgs e)
         {
             F_CreateUser createDialog = new F_CreateUser();
-            createDialog.ShowDialog();
-            this.Show();
+            if(createDialog.ShowDialog() == DialogResult.OK)
+            {
+                
+            }
+            //this.Show();
         }
 
         private void btnCreateRole_Click(object sender, EventArgs e)
@@ -44,5 +47,11 @@ namespace DoAn1
             dtgvUsers.DataSource = data;
         }
 
+        private void btnAllPrivileges_Click(object sender, EventArgs e)
+        {
+            string query = "BEGIN proc_Privileges; END;";
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            dtgvPrivileges.DataSource = data;
+        }
     }
 }

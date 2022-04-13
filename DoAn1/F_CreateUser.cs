@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DoAn1.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,22 @@ namespace DoAn1
             InitializeComponent();
         }
 
-        
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            string query = "BEGIN proc_CreateUser( :n_username , :n_password ); END;";
+            
+            if (txbPassword.Text != txbConfirmPass.Text)
+            {
+                MessageBox.Show("Mật khẩu không trùng khớp!");
+                return;
+            }
+
+            int result = DataProvider.Instance.ExcuteNonQuery(query, new object[] { txbUserName.Text, txbPassword.Text });
+            if(result <= 0)
+            {
+                MessageBox.Show("Không thành công!");
+            }
+               
+        }
     }
 }
