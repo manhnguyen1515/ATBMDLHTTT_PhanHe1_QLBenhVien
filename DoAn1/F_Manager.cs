@@ -21,9 +21,23 @@ namespace DoAn1
 
         private void F_Manager_Load(object sender, EventArgs e)
         {
+            LoadListUser();
+            LoadListRole();
+        }
+
+        private void LoadListUser()
+        {
             string query = "begin proc_users; end;";
             DataTable data = DataProvider.Instance.ExcuteQuery(query);
             dtgvManageUser.DataSource = data;
+            dtgvManagePrivilegeUser.DataSource = data;
+        }
+
+        private void LoadListRole()
+        {
+            string query = "BEGIN proc_Roles; END;";
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            dtgvManageRole.DataSource = data;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -41,7 +55,7 @@ namespace DoAn1
             F_CreateUser createDialog = new F_CreateUser();
             createDialog.ShowDialog();
             this.Show();
-            F_Manager_Load(sender, e);
+            LoadListUser();
         }
 
         private void btnCreateRole_Click(object sender, EventArgs e)
@@ -49,6 +63,7 @@ namespace DoAn1
             F_CreateRole createDialog = new F_CreateRole();
             createDialog.ShowDialog();
             this.Show();
+            LoadListRole();
         }
 
         private void btnViewUser_Click(object sender, EventArgs e)
@@ -84,7 +99,7 @@ namespace DoAn1
                     string query = "BEGIN proc_OracleScript; BEGIN proc_DropUser( :n_username ); END; END;";
                     OracleCommand cmd = DataProvider.Instance.ExcuteNonQuery(query, new object[] { UserName });
                     MessageBox.Show("User đã được xóa thành công!\n\n", "Kết quả");
-                    F_Manager_Load(sender, e);
+                    LoadListUser();
                 }
             }
             catch (Exception ex)
@@ -99,7 +114,25 @@ namespace DoAn1
             F_EditUser editDialog = new F_EditUser(UserName);
             editDialog.ShowDialog();
             this.Show();
-            F_Manager_Load(sender, e);
+            LoadListUser(); ;
+        }
+
+        private void btnAddPrivilegeForUser_Click(object sender, EventArgs e)
+        {
+            string UserName = dtgvManagePrivilegeUser.CurrentRow.Cells["USERNAME"].Value.ToString();
+            F_AddGrant addGrantDialog = new F_AddGrant(UserName, (int)CurrentObject.USER);
+            addGrantDialog.ShowDialog();
+            this.Show();
+            LoadListUser();
+        }
+
+        private void btnAddPrivilegeForRole_Click(object sender, EventArgs e)
+        {
+            string roleName = dtgvManagePrivilegeRole.CurrentRow.Cells["ROLE"].Value.ToString();
+            F_AddGrant addGrantDialog = new F_AddGrant(roleName, (int)CurrentObject.ROLE);
+            addGrantDialog.ShowDialog();
+            this.Show();
+            LoadListRole();
         }
     }
 }
