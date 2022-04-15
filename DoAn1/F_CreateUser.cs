@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.ManagedDataAccess.Client;
 
 namespace DoAn1
 {
@@ -20,20 +21,26 @@ namespace DoAn1
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            string query = "BEGIN proc_CreateUser( :n_username , :n_password ); END;";
-            
-            if (txbPassword.Text != txbConfirmPass.Text)
+            try
             {
-                MessageBox.Show("Mật khẩu không trùng khớp!");
-                return;
-            }
+                if (txbPassword.Text != txbConfirmPass.Text)
+                { 
+                    MessageBox.Show("Mật khẩu không khớp!\n\n");
+                    return;
+                }
+                string userName = txbUserName.Text;
+                string pass = txbPassword.Text;
+                string query = "BEGIN proc_OracleScript; BEGIN proc_CreateUser( :n_username , :n_password ); END; END;";
+                OracleCommand cmd = DataProvider.Instance.ExcuteNonQuery(query, new object[] { userName, pass });
+                MessageBox.Show("User đã được tạo thành công!\n\n", "Kết quả");
 
-            int result = DataProvider.Instance.ExcuteNonQuery(query, new object[] { txbUserName.Text, txbPassword.Text });
-            if(result <= 0)
-            {
-                MessageBox.Show("Không thành công!");
+                this.Close();
             }
-               
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không thể tạo User!\n\n" + ex.Message, "Kết quả");
+            }
         }
+
     }
 }

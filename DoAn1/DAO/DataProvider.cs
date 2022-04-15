@@ -10,10 +10,7 @@ using System.Threading.Tasks;
 namespace DoAn1.DAO
 {
     class DataProvider
-    {
-        //private string connectionStr = "DBA PRIVILEGE=SYSDBA;TNS_ADMIN=C:\\Users\\manhn\\Oracle\\network\\admin;USER ID=SYS;DATA SOURCE=localhost:1521/xe;PERSIST SECURITY INFO=True";
-        //private string connectionStr = "TNS_ADMIN=C:\\Users\\manhn\\Oracle\\network\\admin;USER ID=SYSTEM;DATA SOURCE=localhost:1521/xe;PERSIST SECURITY INFO=True";
-        
+    {   
         private static DataProvider instance;
         public static DataProvider Instance
         {
@@ -53,6 +50,7 @@ namespace DoAn1.DAO
         {
             DataTable dataTable = new DataTable();
 
+
             using (OracleConnection connection = GetDBConnection("localhost", 1521, "xe", "ADMIN", "1234"))
             {
                 connection.Open();
@@ -65,7 +63,7 @@ namespace DoAn1.DAO
                     {
                         if (item.Contains(':'))
                         {
-                            command.Parameters.Add(item, parameter[i]);
+                            command.Parameters.Add(new OracleParameter(item, parameter[i]));
                             i++;
                         }
                     }
@@ -78,20 +76,19 @@ namespace DoAn1.DAO
             return dataTable;
         }
 
-        public int ExcuteNonQuery(string query, object[] parameter = null)
+        public OracleCommand ExcuteNonQuery(string query, object[] parameter = null)
         {
-            int data = 0;
+            OracleCommand command;
+            //int data = 0;
 
             using (OracleConnection connection = GetDBConnection("localhost", 1521, "xe", "ADMIN", "1234"))
             {
                 connection.Open();
-                OracleCommand command = new OracleCommand();
+                command = new OracleCommand();
                 command.Connection = connection;
-                command.CommandText =
-                    "begin " +
-                    "  execute immediate 'EXEC proc_OracleScript;';" +
-                    "  execute immediate '" + query + "';" +
-                    "end;";
+                //command.CommandText += "EXEC proc_OracleScript; --\n";
+                command.CommandText = query;
+
                 command.CommandType = CommandType.Text;
 
                 if (parameter != null)
@@ -107,39 +104,10 @@ namespace DoAn1.DAO
                         }
                     }
                 }
-
-                data = command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
                 connection.Close();
             }
-            return data;
-        }
-
-        public object ExcuteScalar(string query, object[] parameter = null)
-        {
-            object data = null;
-
-            using (OracleConnection connection = GetDBConnection("localhost", 1521, "xe", "ADMIN", "1234"))
-            {
-                connection.Open();
-                OracleCommand command = new OracleCommand(query, connection);
-                if (parameter != null)
-                {
-                    string[] listPara = query.Split(' ');
-                    int i = 0;
-                    foreach (string item in listPara)
-                    {
-                        if (item.Contains('@'))
-                        {
-                            command.Parameters.Add(item, parameter[i]);
-                            i++;
-                        }
-                    }
-                }
-
-                data = command.ExecuteScalar();
-                connection.Close();
-            }
-            return data;
+            return command;
         }
     }
 }
