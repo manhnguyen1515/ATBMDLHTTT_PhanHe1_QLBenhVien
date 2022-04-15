@@ -89,6 +89,12 @@
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="F_AddGrant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_AddGrant.Designer.cs">
+      <DependentUpon>F_AddGrant.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_CreateRole.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="F_AddGrant.resx">
+      <DependentUpon>F_AddGrant.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_CreateRole.resx">
       <DependentUpon>F_CreateRole.cs</DependentUpon>
     </EmbeddedResource>

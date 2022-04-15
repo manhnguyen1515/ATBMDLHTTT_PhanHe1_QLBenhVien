@@ -596,6 +596,7 @@ namespace DoAn1
             this.btnAddPrivilegeForUser.TabIndex = 8;
             this.btnAddPrivilegeForUser.Text = "Cấp quyền";
             this.btnAddPrivilegeForUser.UseVisualStyleBackColor = false;
+            this.btnAddPrivilegeForUser.Click += new System.EventHandler(this.btnAddPrivilegeForUser_Click);
             // 
             // dtgvManagePrivilegeUser
             // 
@@ -661,6 +662,7 @@ namespace DoAn1
             this.btnAddPrivilegeForRole.TabIndex = 8;
             this.btnAddPrivilegeForRole.Text = "Cấp quyền";
             this.btnAddPrivilegeForRole.UseVisualStyleBackColor = false;
+            this.btnAddPrivilegeForRole.Click += new System.EventHandler(this.btnAddPrivilegeForRole_Click);
             // 
             // dtgvManagePrivilegeRole
             // 
