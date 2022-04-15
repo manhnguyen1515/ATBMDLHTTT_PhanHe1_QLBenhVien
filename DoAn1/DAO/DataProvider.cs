@@ -9,9 +9,11 @@ using System.Threading.Tasks;
 
 namespace DoAn1.DAO
 {
-    class DataProvider
+    public class DataProvider
     {   
         private static DataProvider instance;
+        private static OracleConnection connection;
+
         public static DataProvider Instance
         {
             get
@@ -27,6 +29,8 @@ namespace DoAn1.DAO
                 instance = value;
             }
         }
+
+        public static OracleConnection Connection { get => connection; set => connection = value; }
 
         public OracleConnection GetDBConnection(string host, int port, String sid, String user, String password)
         {
@@ -50,10 +54,8 @@ namespace DoAn1.DAO
         {
             DataTable dataTable = new DataTable();
 
-
-            using (OracleConnection connection = GetDBConnection("localhost", 1521, "xe", "ADMIN", "1234"))
+            if(connection != null)
             {
-                connection.Open();
                 OracleCommand command = new OracleCommand(query, connection);
                 if (parameter != null)
                 {
@@ -71,9 +73,9 @@ namespace DoAn1.DAO
 
                 OracleDataAdapter dataAdapter = new OracleDataAdapter(command);
                 dataAdapter.Fill(dataTable);
-                connection.Close();
+                return dataTable;
             }
-            return dataTable;
+            return null;
         }
 
         public OracleCommand ExcuteNonQuery(string query, object[] parameter = null)
@@ -81,9 +83,8 @@ namespace DoAn1.DAO
             OracleCommand command;
             //int data = 0;
 
-            using (OracleConnection connection = GetDBConnection("localhost", 1521, "xe", "ADMIN", "1234"))
+            if(connection != null)
             {
-                connection.Open();
                 command = new OracleCommand();
                 command.Connection = connection;
                 //command.CommandText += "EXEC proc_OracleScript; --\n";
@@ -105,9 +106,10 @@ namespace DoAn1.DAO
                     }
                 }
                 command.ExecuteNonQuery();
-                connection.Close();
+                return command;
             }
-            return command;
+            
+            return null;
         }
     }
 }
