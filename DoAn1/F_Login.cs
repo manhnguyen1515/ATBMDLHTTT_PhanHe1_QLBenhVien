@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DoAn1.DAO;
+using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,10 +26,28 @@ namespace DoAn1
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            F_Manager manager = new F_Manager();
-            this.Hide();
-            manager.ShowDialog();
-            this.Show();
+            string userName = txbUserName.Text;
+            string passWord = txbPassWord.Text;
+
+            using (OracleConnection conn = DataProvider.Instance.GetDBConnection("localhost", 1521, "xe", userName, passWord))
+            {
+                try
+                {
+                    conn.Open();
+                    if (DataProvider.Connection == null)
+                        DataProvider.Connection = conn;
+                    F_Manager manager = new F_Manager();
+                    this.Hide();
+                    manager.ShowDialog();
+                    this.Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    conn.Close();
+                    DataProvider.Connection = null;
+                }
+            }
         }
 
         private void F_Login_FormClosing(object sender, FormClosingEventArgs e)
@@ -35,6 +55,14 @@ namespace DoAn1
             if (MessageBox.Show("Bạn có thật sự muốn thoát!", "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
             {
                 e.Cancel = true;
+            }
+            else
+            {
+                if(DataProvider.Connection != null)
+                {
+                    DataProvider.Connection.Close();
+                    DataProvider.Connection = null;
+                }
             }
         }
 
