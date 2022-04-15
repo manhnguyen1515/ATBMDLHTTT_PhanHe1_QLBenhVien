@@ -1,7 +1,7 @@
 ﻿
 namespace DoAn1
 {
-    partial class F_CreateUser
+    partial class F_EditUser
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,6 @@ namespace DoAn1
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txbConfirmPass = new System.Windows.Forms.TextBox();
@@ -50,24 +49,16 @@ namespace DoAn1
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(101, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 17);
-            this.label1.TabIndex = 0;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Location = new System.Drawing.Point(12, 22);
+            this.panel1.Location = new System.Drawing.Point(12, 11);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(564, 180);
-            this.panel1.TabIndex = 1;
+            this.panel1.TabIndex = 2;
             // 
             // panel5
             // 
@@ -141,6 +132,7 @@ namespace DoAn1
             // 
             // txbUserName
             // 
+            this.txbUserName.Enabled = false;
             this.txbUserName.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txbUserName.Location = new System.Drawing.Point(245, 8);
             this.txbUserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -162,11 +154,11 @@ namespace DoAn1
             // 
             this.panel2.Controls.Add(this.btnOk);
             this.panel2.Controls.Add(this.btnCancel);
-            this.panel2.Location = new System.Drawing.Point(9, 206);
+            this.panel2.Location = new System.Drawing.Point(12, 206);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(564, 66);
-            this.panel2.TabIndex = 2;
+            this.panel2.TabIndex = 3;
             // 
             // btnOk
             // 
@@ -194,7 +186,7 @@ namespace DoAn1
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             // 
-            // F_CreateUser
+            // F_EditUser
             // 
             this.AcceptButton = this.btnOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -204,11 +196,10 @@ namespace DoAn1
             this.ClientSize = new System.Drawing.Size(588, 283);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "F_CreateUser";
+            this.Name = "F_EditUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tạo User";
+            this.Text = "Chỉnh sửa User";
+            this.Load += new System.EventHandler(this.F_EditUser_Load);
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -218,13 +209,11 @@ namespace DoAn1
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox txbConfirmPass;

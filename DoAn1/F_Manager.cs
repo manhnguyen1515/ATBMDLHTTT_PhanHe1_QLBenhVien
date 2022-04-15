@@ -26,6 +26,11 @@ namespace DoAn1
             dtgvManageUser.DataSource = data;
         }
 
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btnCreateUser_Click(object sender, EventArgs e)
         {
             F_CreateUser createDialog = new F_CreateUser();
@@ -50,10 +55,10 @@ namespace DoAn1
 
         private void btnViewUserPrivileges_Click(object sender, EventArgs e)
         {
-            //string userName = txbUserName.Text;
-            //string query = "BEGIN proc_UserPrivileges('" + userName + "'); END;";
-           // DataTable data = DataProvider.Instance.ExcuteQuery(query);
-            //dtgvUserPrivileges.DataSource = data;
+            string name = txbUserRoleName.Text;
+            string query = "BEGIN proc_UserPrivileges( :n_username ); END;";
+            DataTable data = DataProvider.Instance.ExcuteQuery(query, new object[] { name });
+            dtgvPrivileges.DataSource = data;
         }
 
         private void btnAllPrivileges_Click(object sender, EventArgs e)
@@ -70,8 +75,9 @@ namespace DoAn1
                 string UserName = dtgvManageUser.CurrentRow.Cells["USERNAME"].Value.ToString();
                 if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
-                    string query = "BEGIN proc_OracleScript; proc_DropUser('" + UserName + "'); END;";
-                    OracleCommand cmd = DataProvider.Instance.ExcuteNonQuery(query);
+                    //string query = "BEGIN proc_OracleScript; proc_DropUser('" + UserName + "'); END;";
+                    string query = "BEGIN proc_OracleScript; BEGIN proc_DropUser( :n_username ); END; END;";
+                    OracleCommand cmd = DataProvider.Instance.ExcuteNonQuery(query, new object[] { UserName });
                     MessageBox.Show("User đã được xóa thành công!\n\n", "Kết quả");
                     F_Manager_Load(sender, e);
                 }
@@ -80,6 +86,15 @@ namespace DoAn1
             {
                 MessageBox.Show("Không thể xóa user!\n\n" + ex.Message, "Kết quả");
             }
+        }
+
+        private void btnEditUser_Click(object sender, EventArgs e)
+        {
+            string UserName = dtgvManageUser.CurrentRow.Cells["USERNAME"].Value.ToString();
+            F_EditUser editDialog = new F_EditUser(UserName);
+            editDialog.ShowDialog();
+            this.Show();
+            F_Manager_Load(sender, e);
         }
     }
 }
