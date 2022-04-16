@@ -151,10 +151,7 @@
     <EmbeddedResource Include="F_CreateUser.resx">
       <DependentUpon>F_CreateUser.cs</DependentUpon>
     </EmbeddedResource>
-
-    <EmbeddedResource Include="F_EditUser.resx">
-      <DependentUpon>F_EditUser.cs</DependentUpon>
-    </EmbeddedResource>
+    
     <EmbeddedResource Include="F_GrantRole.resx">
       <DependentUpon>F_GrantRole.cs</DependentUpon>
     </EmbeddedResource>
