@@ -82,5 +82,53 @@ namespace DoAn1
                 MessageBox.Show("Không thể xóa user!\n\n" + ex.Message, "Kết quả");
             }
         }
+<<<<<<< Updated upstream
+=======
+
+        private void btnEditUser_Click(object sender, EventArgs e)
+        {
+            string UserName = dtgvManageUser.CurrentRow.Cells["USERNAME"].Value.ToString();
+            F_EditUser editDialog = new F_EditUser(UserName);
+            editDialog.ShowDialog();
+            this.Show();
+            LoadListUser(); ;
+        }
+
+        private void btnAddPrivilegeForUser_Click(object sender, EventArgs e)
+        {
+            string UserName = dtgvManagePrivilegeUser.CurrentRow.Cells["USERNAME"].Value.ToString();
+            F_AddGrant addGrantDialog = new F_AddGrant(UserName, (int)CurrentObject.USER);
+            addGrantDialog.ShowDialog();
+            this.Show();
+            LoadListUser();
+        }
+
+        private void btnAddPrivilegeForRole_Click(object sender, EventArgs e)
+        {
+            string roleName = dtgvManagePrivilegeRole.CurrentRow.Cells["ROLE"].Value.ToString();
+            F_AddGrant addGrantDialog = new F_AddGrant(roleName, (int)CurrentObject.ROLE);
+            addGrantDialog.ShowDialog();
+            this.Show();
+            LoadListRole();
+        }
+
+        private void btnAddRoleForUser_Click(object sender, EventArgs e)
+        {
+            string UserName = dtgvManagePrivilegeUser.CurrentRow.Cells["USERNAME"].Value.ToString();
+            F_GrantRole addGrantDialog = new F_GrantRole(UserName);
+            addGrantDialog.ShowDialog();
+            this.Show();
+            LoadListUser();
+        }
+
+        private void btnRemovePrivilegeForUser_Click(object sender, EventArgs e)
+        {
+            string UserName = dtgvManagePrivilegeUser.CurrentRow.Cells["USERNAME"].Value.ToString();
+            F_RevokeFromUser addGrantDialog = new F_RevokeFromUser(UserName);
+            addGrantDialog.ShowDialog();
+            this.Show();
+            LoadListUser();
+        }
+>>>>>>> Stashed changes
     }
 }
