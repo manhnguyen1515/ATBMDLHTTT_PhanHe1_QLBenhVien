@@ -35,11 +35,11 @@ namespace DoAn1
             {
                 string privilege = txbPrivilegeName.Text;
                 string table = txbTableName.Text;
-                char grantOption = chbGrantOption.Checked == true ? 'Y' : 'N';
+
                 if (_currentObject == (int)CurrentObject.USER)
                 {
-                    string query = "BEGIN proc_OracleScript; BEGIN proc_RevokeFromUser( :n_privilege, :n_table , :n_objectName, :n_flag ); END; END;";
-                    OracleCommand cmd = DataProvider.Instance.ExcuteNonQuery(query, new object[] { privilege, table, _objectName, grantOption });
+                    string query = "BEGIN proc_OracleScript; BEGIN proc_RevokeFromUser( :n_privilege, :n_table , :n_objectName ); END; END;";
+                    OracleCommand cmd = DataProvider.Instance.ExcuteNonQuery(query, new object[] { privilege, table, _objectName });
                 }
                 else if (_currentObject == (int)CurrentObject.ROLE)
                 {

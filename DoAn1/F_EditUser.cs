@@ -35,7 +35,7 @@ namespace DoAn1
             }
             try
             {
-                string query = "BEGIN proc_OracleScript; BEGIN Alter_User( :n_username, :n_password ); END; END;";
+                string query = "BEGIN proc_OracleScript; BEGIN proc_AlterUser( :n_username, :n_password ); END; END;";
                 OracleCommand cmd = DataProvider.Instance.ExcuteNonQuery(query, new object[] { _username, txbPassword.Text });
                 MessageBox.Show("User đã được chỉnh sửa thành thành công!\n\n", "Kết quả");
                 this.Close();

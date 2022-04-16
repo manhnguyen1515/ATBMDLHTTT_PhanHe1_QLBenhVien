@@ -76,24 +76,24 @@ namespace DoAn1
 
         private void btnViewUserPrivileges_Click(object sender, EventArgs e)
         {
-            string name = txbUserRoleName.Text;
-            string query = "BEGIN proc_UserPrivileges( :n_name ); END;";
-            try
-            {
-                DataTable data = DataProvider.Instance.ExcuteQuery(query, new object[] { name });
-                dtgvPrivileges.DataSource = data;
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //string name = txbUserRoleName.Text;
+            //string query = "BEGIN proc_UserPrivileges( :n_name ); END;";
+            //try
+            //{
+            //    DataTable data = DataProvider.Instance.ExcuteQuery(query, new object[] { name });
+            //    dtgvPrivileges.DataSource = data;
+            //}
+            //catch(Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         private void btnAllPrivileges_Click(object sender, EventArgs e)
         {
-            string query = "BEGIN proc_Privileges; END;";
-            DataTable data = DataProvider.Instance.ExcuteQuery(query);
-            dtgvPrivileges.DataSource = data;
+            //string query = "BEGIN proc_Privileges; END;";
+            //DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            //dtgvPrivileges.DataSource = data;
         }
 
         private void btnDropUser_Click(object sender, EventArgs e)
@@ -190,5 +190,34 @@ namespace DoAn1
             LoadListUser();
         }
 
+        private void btnAllUserPrivs_Click(object sender, EventArgs e)
+        {
+            string query = "BEGIN proc_AllUserPrivileges; END;";
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            dtgvUserPrivs.DataSource = data;
+        }
+
+        private void btnViewUserPriv_Click(object sender, EventArgs e)
+        {
+            string name = txbUserName.Text;
+            string query = "BEGIN proc_UserPrivileges( :n_username ); END;";
+            DataTable data = DataProvider.Instance.ExcuteQuery(query, new object[] { name });
+            dtgvUserPrivs.DataSource = data;
+        }
+
+        private void btnViewAllRolePrivs_Click(object sender, EventArgs e)
+        {
+            string query = "BEGIN proc_AllRolePrivileges; END;";
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            dtgvRolePrivs.DataSource = data;
+        }
+
+        private void btnViewRolePrivs_Click(object sender, EventArgs e)
+        {
+            string name = txbRoleName.Text;
+            string query = "BEGIN proc_RolePrivileges( :n_rolename ); END;";
+            DataTable data = DataProvider.Instance.ExcuteQuery(query, new object[] { name });
+            dtgvRolePrivs.DataSource = data;
+        }
     }
 }

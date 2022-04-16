@@ -30,7 +30,6 @@ namespace DoAn1
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.chbGrantOption = new System.Windows.Forms.CheckBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txbTableName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,7 +51,6 @@ namespace DoAn1
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.chbGrantOption);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
@@ -61,16 +59,6 @@ namespace DoAn1
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(564, 180);
             this.panel1.TabIndex = 3;
-            // 
-            // chbGrantOption
-            // 
-            this.chbGrantOption.AutoSize = true;
-            this.chbGrantOption.Location = new System.Drawing.Point(248, 146);
-            this.chbGrantOption.Name = "chbGrantOption";
-            this.chbGrantOption.Size = new System.Drawing.Size(138, 21);
-            this.chbGrantOption.TabIndex = 4;
-            this.chbGrantOption.Text = "With grant option";
-            this.chbGrantOption.UseVisualStyleBackColor = true;
             // 
             // panel5
             // 
@@ -209,7 +197,6 @@ namespace DoAn1
             this.Text = "Thu hồi quyền";
             this.Load += new System.EventHandler(this.F_RevokeGrant_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -236,6 +223,5 @@ namespace DoAn1
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox txbPrivilegeName;
-        private System.Windows.Forms.CheckBox chbGrantOption;
     }
 }
