@@ -37,16 +37,6 @@ namespace DoAn1
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvUsers = new System.Windows.Forms.DataGridView();
             this.tpPrivileges = new System.Windows.Forms.TabPage();
-            this.dtgvPrivileges = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.splitter2 = new System.Windows.Forms.Splitter();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnViewUserPrivileges = new System.Windows.Forms.Button();
-            this.txbUserRoleName = new System.Windows.Forms.TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.splitter1 = new System.Windows.Forms.Splitter();
-            this.btnAllPrivileges = new System.Windows.Forms.Button();
             this.tpManageUser_Role = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tpManageUser = new System.Windows.Forms.TabPage();
@@ -76,6 +66,29 @@ namespace DoAn1
             this.dtgvManagePrivilegeRole = new System.Windows.Forms.DataGridView();
             this.tpCheckPrivileges = new System.Windows.Forms.TabPage();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dtgvUserPrivs = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.splitter2 = new System.Windows.Forms.Splitter();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnViewUserPriv = new System.Windows.Forms.Button();
+            this.txbUserName = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.btnAllUserPrivs = new System.Windows.Forms.Button();
+            this.dtgvRolePrivs = new System.Windows.Forms.DataGridView();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.btnViewAllRolePrivs = new System.Windows.Forms.Button();
+            this.splitter4 = new System.Windows.Forms.Splitter();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.txbRoleName = new System.Windows.Forms.TextBox();
+            this.btnViewRolePrivs = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.splitter3 = new System.Windows.Forms.Splitter();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.tcManager.SuspendLayout();
             this.tpUsers.SuspendLayout();
@@ -83,10 +96,6 @@ namespace DoAn1
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvUsers)).BeginInit();
             this.tpPrivileges.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvPrivileges)).BeginInit();
-            this.panel4.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.tpManageUser_Role.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tpManageUser.SuspendLayout();
@@ -103,6 +112,17 @@ namespace DoAn1
             this.tabPage2.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvManagePrivilegeRole)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvUserPrivs)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvRolePrivs)).BeginInit();
+            this.panel13.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.panel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -192,8 +212,7 @@ namespace DoAn1
             // 
             // tpPrivileges
             // 
-            this.tpPrivileges.Controls.Add(this.dtgvPrivileges);
-            this.tpPrivileges.Controls.Add(this.panel4);
+            this.tpPrivileges.Controls.Add(this.tabControl1);
             this.tpPrivileges.Location = new System.Drawing.Point(4, 34);
             this.tpPrivileges.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpPrivileges.Name = "tpPrivileges";
@@ -202,119 +221,6 @@ namespace DoAn1
             this.tpPrivileges.TabIndex = 1;
             this.tpPrivileges.Text = "Thông tin quyền";
             this.tpPrivileges.UseVisualStyleBackColor = true;
-            // 
-            // dtgvPrivileges
-            // 
-            this.dtgvPrivileges.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dtgvPrivileges.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvPrivileges.Location = new System.Drawing.Point(7, 4);
-            this.dtgvPrivileges.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtgvPrivileges.Name = "dtgvPrivileges";
-            this.dtgvPrivileges.RowHeadersWidth = 51;
-            this.dtgvPrivileges.RowTemplate.Height = 29;
-            this.dtgvPrivileges.Size = new System.Drawing.Size(753, 449);
-            this.dtgvPrivileges.TabIndex = 7;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.panel9);
-            this.panel4.Controls.Add(this.panel5);
-            this.panel4.Location = new System.Drawing.Point(766, 4);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(317, 449);
-            this.panel4.TabIndex = 6;
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.splitter2);
-            this.panel9.Controls.Add(this.label1);
-            this.panel9.Controls.Add(this.btnViewUserPrivileges);
-            this.panel9.Controls.Add(this.txbUserRoleName);
-            this.panel9.Location = new System.Drawing.Point(3, 234);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(311, 212);
-            this.panel9.TabIndex = 6;
-            // 
-            // splitter2
-            // 
-            this.splitter2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.splitter2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitter2.Location = new System.Drawing.Point(0, 0);
-            this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(311, 3);
-            this.splitter2.TabIndex = 4;
-            this.splitter2.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(59, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(214, 28);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Nhập tên User / Role :";
-            // 
-            // btnViewUserPrivileges
-            // 
-            this.btnViewUserPrivileges.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnViewUserPrivileges.FlatAppearance.BorderSize = 0;
-            this.btnViewUserPrivileges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewUserPrivileges.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewUserPrivileges.ForeColor = System.Drawing.Color.White;
-            this.btnViewUserPrivileges.Location = new System.Drawing.Point(94, 132);
-            this.btnViewUserPrivileges.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnViewUserPrivileges.Name = "btnViewUserPrivileges";
-            this.btnViewUserPrivileges.Size = new System.Drawing.Size(158, 43);
-            this.btnViewUserPrivileges.TabIndex = 3;
-            this.btnViewUserPrivileges.Text = "Xem";
-            this.btnViewUserPrivileges.UseVisualStyleBackColor = false;
-            this.btnViewUserPrivileges.Click += new System.EventHandler(this.btnViewUserPrivileges_Click);
-            // 
-            // txbUserRoleName
-            // 
-            this.txbUserRoleName.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.txbUserRoleName.Location = new System.Drawing.Point(19, 80);
-            this.txbUserRoleName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txbUserRoleName.Name = "txbUserRoleName";
-            this.txbUserRoleName.Size = new System.Drawing.Size(289, 38);
-            this.txbUserRoleName.TabIndex = 2;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.splitter1);
-            this.panel5.Controls.Add(this.btnAllPrivileges);
-            this.panel5.Location = new System.Drawing.Point(3, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(311, 225);
-            this.panel5.TabIndex = 5;
-            // 
-            // splitter1
-            // 
-            this.splitter1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 222);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(311, 3);
-            this.splitter1.TabIndex = 5;
-            this.splitter1.TabStop = false;
-            // 
-            // btnAllPrivileges
-            // 
-            this.btnAllPrivileges.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnAllPrivileges.FlatAppearance.BorderSize = 0;
-            this.btnAllPrivileges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAllPrivileges.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAllPrivileges.ForeColor = System.Drawing.Color.White;
-            this.btnAllPrivileges.Location = new System.Drawing.Point(94, 86);
-            this.btnAllPrivileges.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAllPrivileges.Name = "btnAllPrivileges";
-            this.btnAllPrivileges.Size = new System.Drawing.Size(158, 43);
-            this.btnAllPrivileges.TabIndex = 4;
-            this.btnAllPrivileges.Text = "Xem tất cả";
-            this.btnAllPrivileges.UseVisualStyleBackColor = false;
-            this.btnAllPrivileges.Click += new System.EventHandler(this.btnAllPrivileges_Click);
             // 
             // tpManageUser_Role
             // 
@@ -704,6 +610,269 @@ namespace DoAn1
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Location = new System.Drawing.Point(3, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1091, 451);
+            this.tabControl1.TabIndex = 8;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.dtgvUserPrivs);
+            this.tabPage3.Controls.Add(this.panel4);
+            this.tabPage3.Location = new System.Drawing.Point(4, 34);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage3.Size = new System.Drawing.Size(1083, 413);
+            this.tabPage3.TabIndex = 0;
+            this.tabPage3.Text = "User";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.dtgvRolePrivs);
+            this.tabPage4.Controls.Add(this.panel11);
+            this.tabPage4.Location = new System.Drawing.Point(4, 34);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage4.Size = new System.Drawing.Size(1083, 413);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "Role";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // dtgvUserPrivs
+            // 
+            this.dtgvUserPrivs.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dtgvUserPrivs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvUserPrivs.Location = new System.Drawing.Point(2, 0);
+            this.dtgvUserPrivs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgvUserPrivs.Name = "dtgvUserPrivs";
+            this.dtgvUserPrivs.RowHeadersWidth = 51;
+            this.dtgvUserPrivs.RowTemplate.Height = 29;
+            this.dtgvUserPrivs.Size = new System.Drawing.Size(753, 408);
+            this.dtgvUserPrivs.TabIndex = 9;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.panel9);
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Location = new System.Drawing.Point(761, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(317, 417);
+            this.panel4.TabIndex = 8;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.splitter2);
+            this.panel9.Controls.Add(this.label1);
+            this.panel9.Controls.Add(this.btnViewUserPriv);
+            this.panel9.Controls.Add(this.txbUserName);
+            this.panel9.Location = new System.Drawing.Point(3, 208);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(311, 200);
+            this.panel9.TabIndex = 6;
+            // 
+            // splitter2
+            // 
+            this.splitter2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.splitter2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.splitter2.Location = new System.Drawing.Point(0, 0);
+            this.splitter2.Name = "splitter2";
+            this.splitter2.Size = new System.Drawing.Size(311, 3);
+            this.splitter2.TabIndex = 4;
+            this.splitter2.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(3, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 28);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Nhập tên User:";
+            // 
+            // btnViewUserPriv
+            // 
+            this.btnViewUserPriv.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnViewUserPriv.FlatAppearance.BorderSize = 0;
+            this.btnViewUserPriv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewUserPriv.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewUserPriv.ForeColor = System.Drawing.Color.White;
+            this.btnViewUserPriv.Location = new System.Drawing.Point(77, 135);
+            this.btnViewUserPriv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnViewUserPriv.Name = "btnViewUserPriv";
+            this.btnViewUserPriv.Size = new System.Drawing.Size(158, 43);
+            this.btnViewUserPriv.TabIndex = 3;
+            this.btnViewUserPriv.Text = "Xem";
+            this.btnViewUserPriv.UseVisualStyleBackColor = false;
+            this.btnViewUserPriv.Click += new System.EventHandler(this.btnViewUserPriv_Click);
+            // 
+            // txbUserName
+            // 
+            this.txbUserName.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.txbUserName.Location = new System.Drawing.Point(3, 80);
+            this.txbUserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbUserName.Name = "txbUserName";
+            this.txbUserName.Size = new System.Drawing.Size(305, 38);
+            this.txbUserName.TabIndex = 2;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.splitter1);
+            this.panel5.Controls.Add(this.btnAllUserPrivs);
+            this.panel5.Location = new System.Drawing.Point(3, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(311, 199);
+            this.panel5.TabIndex = 5;
+            // 
+            // splitter1
+            // 
+            this.splitter1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.splitter1.Location = new System.Drawing.Point(0, 196);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(311, 3);
+            this.splitter1.TabIndex = 5;
+            this.splitter1.TabStop = false;
+            // 
+            // btnAllUserPrivs
+            // 
+            this.btnAllUserPrivs.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnAllUserPrivs.FlatAppearance.BorderSize = 0;
+            this.btnAllUserPrivs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAllUserPrivs.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAllUserPrivs.ForeColor = System.Drawing.Color.White;
+            this.btnAllUserPrivs.Location = new System.Drawing.Point(77, 81);
+            this.btnAllUserPrivs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAllUserPrivs.Name = "btnAllUserPrivs";
+            this.btnAllUserPrivs.Size = new System.Drawing.Size(158, 43);
+            this.btnAllUserPrivs.TabIndex = 4;
+            this.btnAllUserPrivs.Text = "Xem tất cả";
+            this.btnAllUserPrivs.UseVisualStyleBackColor = false;
+            this.btnAllUserPrivs.Click += new System.EventHandler(this.btnAllUserPrivs_Click);
+            // 
+            // dtgvRolePrivs
+            // 
+            this.dtgvRolePrivs.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dtgvRolePrivs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvRolePrivs.Location = new System.Drawing.Point(2, 2);
+            this.dtgvRolePrivs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgvRolePrivs.Name = "dtgvRolePrivs";
+            this.dtgvRolePrivs.RowHeadersWidth = 51;
+            this.dtgvRolePrivs.RowTemplate.Height = 29;
+            this.dtgvRolePrivs.Size = new System.Drawing.Size(753, 406);
+            this.dtgvRolePrivs.TabIndex = 11;
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.splitter4);
+            this.panel13.Controls.Add(this.btnViewAllRolePrivs);
+            this.panel13.Location = new System.Drawing.Point(3, 3);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(311, 199);
+            this.panel13.TabIndex = 5;
+            // 
+            // btnViewAllRolePrivs
+            // 
+            this.btnViewAllRolePrivs.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnViewAllRolePrivs.FlatAppearance.BorderSize = 0;
+            this.btnViewAllRolePrivs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewAllRolePrivs.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewAllRolePrivs.ForeColor = System.Drawing.Color.White;
+            this.btnViewAllRolePrivs.Location = new System.Drawing.Point(77, 81);
+            this.btnViewAllRolePrivs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnViewAllRolePrivs.Name = "btnViewAllRolePrivs";
+            this.btnViewAllRolePrivs.Size = new System.Drawing.Size(158, 43);
+            this.btnViewAllRolePrivs.TabIndex = 4;
+            this.btnViewAllRolePrivs.Text = "Xem tất cả";
+            this.btnViewAllRolePrivs.UseVisualStyleBackColor = false;
+            this.btnViewAllRolePrivs.Click += new System.EventHandler(this.btnViewAllRolePrivs_Click);
+            // 
+            // splitter4
+            // 
+            this.splitter4.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.splitter4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.splitter4.Location = new System.Drawing.Point(0, 196);
+            this.splitter4.Name = "splitter4";
+            this.splitter4.Size = new System.Drawing.Size(311, 3);
+            this.splitter4.TabIndex = 5;
+            this.splitter4.TabStop = false;
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.splitter3);
+            this.panel12.Controls.Add(this.label2);
+            this.panel12.Controls.Add(this.btnViewRolePrivs);
+            this.panel12.Controls.Add(this.txbRoleName);
+            this.panel12.Location = new System.Drawing.Point(3, 208);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(311, 200);
+            this.panel12.TabIndex = 6;
+            // 
+            // txbRoleName
+            // 
+            this.txbRoleName.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.txbRoleName.Location = new System.Drawing.Point(3, 80);
+            this.txbRoleName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbRoleName.Name = "txbRoleName";
+            this.txbRoleName.Size = new System.Drawing.Size(305, 38);
+            this.txbRoleName.TabIndex = 2;
+            // 
+            // btnViewRolePrivs
+            // 
+            this.btnViewRolePrivs.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnViewRolePrivs.FlatAppearance.BorderSize = 0;
+            this.btnViewRolePrivs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewRolePrivs.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewRolePrivs.ForeColor = System.Drawing.Color.White;
+            this.btnViewRolePrivs.Location = new System.Drawing.Point(77, 135);
+            this.btnViewRolePrivs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnViewRolePrivs.Name = "btnViewRolePrivs";
+            this.btnViewRolePrivs.Size = new System.Drawing.Size(158, 43);
+            this.btnViewRolePrivs.TabIndex = 3;
+            this.btnViewRolePrivs.Text = "Xem";
+            this.btnViewRolePrivs.UseVisualStyleBackColor = false;
+            this.btnViewRolePrivs.Click += new System.EventHandler(this.btnViewRolePrivs_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(3, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(147, 28);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Nhập tên Role:";
+            // 
+            // splitter3
+            // 
+            this.splitter3.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.splitter3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.splitter3.Location = new System.Drawing.Point(0, 0);
+            this.splitter3.Name = "splitter3";
+            this.splitter3.Size = new System.Drawing.Size(311, 3);
+            this.splitter3.TabIndex = 4;
+            this.splitter3.TabStop = false;
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.panel12);
+            this.panel11.Controls.Add(this.panel13);
+            this.panel11.Location = new System.Drawing.Point(761, 0);
+            this.panel11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(322, 417);
+            this.panel11.TabIndex = 10;
+            // 
             // F_Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -723,11 +892,6 @@ namespace DoAn1
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvUsers)).EndInit();
             this.tpPrivileges.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvPrivileges)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel5.ResumeLayout(false);
             this.tpManageUser_Role.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tpManageUser.ResumeLayout(false);
@@ -744,6 +908,19 @@ namespace DoAn1
             this.tabPage2.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvManagePrivilegeRole)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvUserPrivs)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvRolePrivs)).EndInit();
+            this.panel13.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
+            this.panel11.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -786,17 +963,30 @@ namespace DoAn1
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button btnRemovePrivilegeForRole;
         private System.Windows.Forms.Button btnAddPrivilegeForRole;
-        private System.Windows.Forms.DataGridView dtgvPrivileges;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btnViewUserPrivileges;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txbUserRoleName;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btnAllPrivileges;
-        private System.Windows.Forms.Splitter splitter1;
-        private System.Windows.Forms.Splitter splitter2;
         private System.Windows.Forms.TabPage tpCheckPrivileges;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.DataGridView dtgvUserPrivs;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Splitter splitter2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnViewUserPriv;
+        private System.Windows.Forms.TextBox txbUserName;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.Button btnAllUserPrivs;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.DataGridView dtgvRolePrivs;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Splitter splitter3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnViewRolePrivs;
+        private System.Windows.Forms.TextBox txbRoleName;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Splitter splitter4;
+        private System.Windows.Forms.Button btnViewAllRolePrivs;
     }
 }
 
