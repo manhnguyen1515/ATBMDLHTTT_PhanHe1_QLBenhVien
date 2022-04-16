@@ -134,5 +134,24 @@ namespace DoAn1
             this.Show();
             LoadListRole();
         }
+
+        private void btnAddRoleForUser_Click(object sender, EventArgs e)
+        {
+            string UserName = dtgvManagePrivilegeUser.CurrentRow.Cells["USERNAME"].Value.ToString();
+            F_GrantRole addGrantDialog = new F_GrantRole(UserName);
+            addGrantDialog.ShowDialog();
+            this.Show();
+            LoadListUser();
+        }
+
+        private void btnRemovePrivilegeForUser_Click(object sender, EventArgs e)
+        {
+            string UserName = dtgvManagePrivilegeUser.CurrentRow.Cells["USERNAME"].Value.ToString();
+            F_RevokeFromUser addGrantDialog = new F_RevokeFromUser(UserName);
+            addGrantDialog.ShowDialog();
+            this.Show();
+            LoadListUser();
+        }
+
     }
 }
