@@ -176,25 +176,12 @@ namespace DoAn1
 
         private void btnRemovePrivilegeForUser_Click(object sender, EventArgs e)
         {
-            string UserName = dtgvManagePrivilegeUser.CurrentRow.Cells["USERNAME"].Value.ToString();
-            F_RevokeFromUser addGrantDialog = new F_RevokeFromUser(UserName);
-            addGrantDialog.ShowDialog();
-            this.Show();
-            LoadListUser();
+            //string UserName = dtgvManagePrivilegeUser.CurrentRow.Cells["USERNAME"].Value.ToString();
+            //F_RevokeFromUser addGrantDialog = new F_RevokeFromUser(UserName);
+            //addGrantDialog.ShowDialog();
+            //this.Show();
+            //LoadListUser();
         }
 
-        private void btnRemovePrivilegeForUser_Click(object sender, EventArgs e)
-        {
-            string UserName = dtgvManagePrivilegeUser.CurrentRow.Cells["USERNAME"].Value.ToString();
-            F_RevokeGrant revokeGrantDialog = new F_RevokeGrant(UserName, (int)CurrentObject.USER);
-            revokeGrantDialog.ShowDialog();
-            this.Show();
-            LoadListUser();
-        }
-
-        private void btnAddRoleForUser_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
