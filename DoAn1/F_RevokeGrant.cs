@@ -33,7 +33,7 @@ namespace DoAn1
         {
             try
             {
-                string privilege = txbPrivilege.Text;
+                string privilege = txbPrivilegeName.Text;
                 string table = txbTableName.Text;
                 char grantOption = chbGrantOption.Checked == true ? 'Y' : 'N';
                 if (_currentObject == (int)CurrentObject.USER)
@@ -43,8 +43,8 @@ namespace DoAn1
                 }
                 else if (_currentObject == (int)CurrentObject.ROLE)
                 {
-                    //string query = "BEGIN proc_OracleScript; BEGIN proc_GrantForRole( :n_privilege, :n_table , :n_objectName); END; END;";
-                    //OracleCommand cmd = DataProvider.Instance.ExcuteNonQuery(query, new object[] { privilege, table, _objectName });
+                    string query = "BEGIN proc_OracleScript; BEGIN REVOKE_PRIVS_ROLE( :n_objectName , :n_privilege ); END; END;";
+                    OracleCommand cmd = DataProvider.Instance.ExcuteNonQuery(query, new object[] { _objectName , privilege });
                 }
                 else
                 {

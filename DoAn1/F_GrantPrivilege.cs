@@ -17,14 +17,14 @@ namespace DoAn1
         USER,
         ROLE
     }
-    public partial class F_AddGrant : Form
+    public partial class F_GrantPrivilege : Form
     {
         private int _currentObject; //0: user ; 1: role
         private string _objectName;
         //List<string> _privileges;
 
 
-        public F_AddGrant(string objectName, int currentObject)
+        public F_GrantPrivilege(string objectName, int currentObject)
         {
             InitializeComponent();
             _objectName = objectName;
@@ -33,8 +33,8 @@ namespace DoAn1
 
         private void F_AddGrant_Load(object sender, EventArgs e)
         {
-            //_privileges = new List<string>() { "SELECT", "UPDATE", "INSERT", "DELETE"};
-            //cbbPrivilegeName.DataSource = _privileges;
+            //_privileges = new List<string>() { "SELECT", "UPDATE", "INSERT", "DELETE", "ALL"};
+            //comboBox1.DataSource = _privileges;
             txbUserRoleName.Text = _objectName;
         }
 
@@ -42,7 +42,8 @@ namespace DoAn1
         {
             try
             {
-                string privilege = txbPrivilege.Text;
+                //string privilege = _privileges[comboBox1.SelectedIndex];
+                string privilege = txbPrivilegeName.Text;
                 string table = txbTableName.Text;
                 char grantOption = chbGrantOption.Checked == true ? 'Y' : 'N';
                 if(_currentObject == (int)CurrentObject.USER)

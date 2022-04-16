@@ -150,6 +150,7 @@ namespace DoAn1
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(555, 246);
             this.Controls.Add(this.panel1);

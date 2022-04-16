@@ -89,11 +89,11 @@
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
-    <Compile Include="F_AddGrant.cs">
+    <Compile Include="F_GrantPrivilege.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_AddGrant.Designer.cs">
-      <DependentUpon>F_AddGrant.cs</DependentUpon>
+    <Compile Include="F_GrantPrivilege.Designer.cs">
+      <DependentUpon>F_GrantPrivilege.cs</DependentUpon>
     </Compile>
     <Compile Include="F_CreateRole.cs">
       <SubType>Form</SubType>
@@ -107,21 +107,18 @@
     <Compile Include="F_CreateUser.Designer.cs">
       <DependentUpon>F_CreateUser.cs</DependentUpon>
     </Compile>
-
     <Compile Include="F_EditUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="F_EditUser.Designer.cs">
       <DependentUpon>F_EditUser.cs</DependentUpon>
     </Compile>
-
     <Compile Include="F_GrantRole.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="F_GrantRole.Designer.cs">
       <DependentUpon>F_GrantRole.cs</DependentUpon>
     </Compile>
-
     <Compile Include="F_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,8 +139,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="F_AddGrant.resx">
-      <DependentUpon>F_AddGrant.cs</DependentUpon>
+    <EmbeddedResource Include="F_GrantPrivilege.resx">
+      <DependentUpon>F_GrantPrivilege.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_CreateRole.resx">
       <DependentUpon>F_CreateRole.cs</DependentUpon>
@@ -151,15 +148,12 @@
     <EmbeddedResource Include="F_CreateUser.resx">
       <DependentUpon>F_CreateUser.cs</DependentUpon>
     </EmbeddedResource>
-    
     <EmbeddedResource Include="F_GrantRole.resx">
       <DependentUpon>F_GrantRole.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="F_EditUser.resx">
       <DependentUpon>F_EditUser.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="F_Login.resx">
       <DependentUpon>F_Login.cs</DependentUpon>
     </EmbeddedResource>

@@ -77,9 +77,16 @@ namespace DoAn1
         private void btnViewUserPrivileges_Click(object sender, EventArgs e)
         {
             string name = txbUserRoleName.Text;
-            string query = "BEGIN proc_UserPrivileges( :n_username ); END;";
-            DataTable data = DataProvider.Instance.ExcuteQuery(query, new object[] { name });
-            dtgvPrivileges.DataSource = data;
+            string query = "BEGIN proc_UserPrivileges( :n_name ); END;";
+            try
+            {
+                DataTable data = DataProvider.Instance.ExcuteQuery(query, new object[] { name });
+                dtgvPrivileges.DataSource = data;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnAllPrivileges_Click(object sender, EventArgs e)
@@ -121,7 +128,7 @@ namespace DoAn1
         private void btnAddPrivilegeForUser_Click(object sender, EventArgs e)
         {
             string UserName = dtgvManagePrivilegeUser.CurrentRow.Cells["USERNAME"].Value.ToString();
-            F_AddGrant addGrantDialog = new F_AddGrant(UserName, (int)CurrentObject.USER);
+            F_GrantPrivilege addGrantDialog = new F_GrantPrivilege(UserName, (int)CurrentObject.USER);
             addGrantDialog.ShowDialog();
             this.Show();
             LoadListUser();
@@ -130,7 +137,7 @@ namespace DoAn1
         private void btnAddPrivilegeForRole_Click(object sender, EventArgs e)
         {
             string roleName = dtgvManagePrivilegeRole.CurrentRow.Cells["ROLE"].Value.ToString();
-            F_AddGrant addGrantDialog = new F_AddGrant(roleName, (int)CurrentObject.ROLE);
+            F_GrantPrivilege addGrantDialog = new F_GrantPrivilege(roleName, (int)CurrentObject.ROLE);
             addGrantDialog.ShowDialog();
             this.Show();
             LoadListRole();
@@ -176,11 +183,11 @@ namespace DoAn1
 
         private void btnRemovePrivilegeForUser_Click(object sender, EventArgs e)
         {
-            //string UserName = dtgvManagePrivilegeUser.CurrentRow.Cells["USERNAME"].Value.ToString();
-            //F_RevokeFromUser addGrantDialog = new F_RevokeFromUser(UserName);
-            //addGrantDialog.ShowDialog();
-            //this.Show();
-            //LoadListUser();
+            string userName = dtgvManagePrivilegeUser.CurrentRow.Cells["USERNAME"].Value.ToString();
+            F_RevokeGrant revokeGrantDialog = new F_RevokeGrant(userName, (int)CurrentObject.USER);
+            revokeGrantDialog.ShowDialog();
+            this.Show();
+            LoadListUser();
         }
 
     }

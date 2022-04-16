@@ -74,7 +74,6 @@ namespace DoAn1
             this.btnRemovePrivilegeForRole = new System.Windows.Forms.Button();
             this.btnAddPrivilegeForRole = new System.Windows.Forms.Button();
             this.dtgvManagePrivilegeRole = new System.Windows.Forms.DataGridView();
-            this.tpCheckPrivileges = new System.Windows.Forms.TabPage();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tcManager.SuspendLayout();
@@ -120,7 +119,6 @@ namespace DoAn1
             this.tcManager.Controls.Add(this.tpPrivileges);
             this.tcManager.Controls.Add(this.tpManageUser_Role);
             this.tcManager.Controls.Add(this.tpManagePrivileges);
-            this.tcManager.Controls.Add(this.tpCheckPrivileges);
             this.tcManager.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tcManager.Location = new System.Drawing.Point(3, 12);
             this.tcManager.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -680,16 +678,6 @@ namespace DoAn1
             this.dtgvManagePrivilegeRole.Size = new System.Drawing.Size(753, 417);
             this.dtgvManagePrivilegeRole.TabIndex = 7;
             // 
-            // tpCheckPrivileges
-            // 
-            this.tpCheckPrivileges.Location = new System.Drawing.Point(4, 34);
-            this.tpCheckPrivileges.Name = "tpCheckPrivileges";
-            this.tpCheckPrivileges.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCheckPrivileges.Size = new System.Drawing.Size(1090, 457);
-            this.tpCheckPrivileges.TabIndex = 4;
-            this.tpCheckPrivileges.Text = "Quyền chủ thể";
-            this.tpCheckPrivileges.UseVisualStyleBackColor = true;
-            // 
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -798,7 +786,6 @@ namespace DoAn1
         private System.Windows.Forms.Button btnAllPrivileges;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Splitter splitter2;
-        private System.Windows.Forms.TabPage tpCheckPrivileges;
     }
 }
 

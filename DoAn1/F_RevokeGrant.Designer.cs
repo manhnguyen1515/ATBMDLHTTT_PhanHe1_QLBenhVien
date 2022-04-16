@@ -30,10 +30,12 @@ namespace DoAn1
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chbGrantOption = new System.Windows.Forms.CheckBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txbTableName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txbPrivilegeName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txbUserRoleName = new System.Windows.Forms.TextBox();
@@ -41,8 +43,6 @@ namespace DoAn1
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.txbPrivilege = new System.Windows.Forms.TextBox();
-            this.chbGrantOption = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -61,6 +61,16 @@ namespace DoAn1
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(564, 180);
             this.panel1.TabIndex = 3;
+            // 
+            // chbGrantOption
+            // 
+            this.chbGrantOption.AutoSize = true;
+            this.chbGrantOption.Location = new System.Drawing.Point(248, 146);
+            this.chbGrantOption.Name = "chbGrantOption";
+            this.chbGrantOption.Size = new System.Drawing.Size(138, 21);
+            this.chbGrantOption.TabIndex = 4;
+            this.chbGrantOption.Text = "With grant option";
+            this.chbGrantOption.UseVisualStyleBackColor = true;
             // 
             // panel5
             // 
@@ -93,13 +103,22 @@ namespace DoAn1
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.txbPrivilege);
+            this.panel4.Controls.Add(this.txbPrivilegeName);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Location = new System.Drawing.Point(0, 48);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(561, 44);
             this.panel4.TabIndex = 2;
+            // 
+            // txbPrivilegeName
+            // 
+            this.txbPrivilegeName.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txbPrivilegeName.Location = new System.Drawing.Point(248, 2);
+            this.txbPrivilegeName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbPrivilegeName.Name = "txbPrivilegeName";
+            this.txbPrivilegeName.Size = new System.Drawing.Size(310, 34);
+            this.txbPrivilegeName.TabIndex = 2;
             // 
             // label3
             // 
@@ -177,25 +196,6 @@ namespace DoAn1
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             // 
-            // txbPrivilege
-            // 
-            this.txbPrivilege.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txbPrivilege.Location = new System.Drawing.Point(248, 2);
-            this.txbPrivilege.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txbPrivilege.Name = "txbPrivilege";
-            this.txbPrivilege.Size = new System.Drawing.Size(310, 34);
-            this.txbPrivilege.TabIndex = 2;
-            // 
-            // chbGrantOption
-            // 
-            this.chbGrantOption.AutoSize = true;
-            this.chbGrantOption.Location = new System.Drawing.Point(248, 146);
-            this.chbGrantOption.Name = "chbGrantOption";
-            this.chbGrantOption.Size = new System.Drawing.Size(138, 21);
-            this.chbGrantOption.TabIndex = 4;
-            this.chbGrantOption.Text = "With grant option";
-            this.chbGrantOption.UseVisualStyleBackColor = true;
-            // 
             // F_RevokeGrant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -205,6 +205,7 @@ namespace DoAn1
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "F_RevokeGrant";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thu hồi quyền";
             this.Load += new System.EventHandler(this.F_RevokeGrant_Load);
             this.panel1.ResumeLayout(false);
@@ -234,7 +235,7 @@ namespace DoAn1
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TextBox txbPrivilege;
+        private System.Windows.Forms.TextBox txbPrivilegeName;
         private System.Windows.Forms.CheckBox chbGrantOption;
     }
 }
