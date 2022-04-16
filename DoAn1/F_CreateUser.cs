@@ -30,8 +30,8 @@ namespace DoAn1
                 }
                 string userName = txbUserName.Text;
                 string pass = txbPassword.Text;
-                string query = "BEGIN proc_OracleScript; proc_CreateUser('" + userName + "','" + pass +  "'); END;";
-                OracleCommand cmd = DataProvider.Instance.ExcuteNonQuery(query);
+                string query = "BEGIN proc_OracleScript; BEGIN proc_CreateUser( :n_username , :n_password ); END; END;";
+                OracleCommand cmd = DataProvider.Instance.ExcuteNonQuery(query, new object[] { userName, pass });
                 MessageBox.Show("User đã được tạo thành công!\n\n", "Kết quả");
 
                 this.Close();

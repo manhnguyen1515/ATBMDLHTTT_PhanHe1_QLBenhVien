@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -28,10 +29,10 @@ namespace DoAn1.DAO
 
         public bool Login(string userName, string passWord)
         {
-            string query = "EXEC USP_Login @userName , @passWord";
-            DataTable dataTable = DataProvider.Instance.ExcuteQuery(query, new object[] { userName, passWord });
+            string query = "BEGIN check_password( :userName , :passWord ) END;";
+            OracleCommand cmd = DataProvider.Instance.ExcuteNonQuery(query, new object[] { userName, passWord });
 
-            return dataTable.Rows.Count > 0;
+            return cmd.RowSize > 0;
         }
     }
 }

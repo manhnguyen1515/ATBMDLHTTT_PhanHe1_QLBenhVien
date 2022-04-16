@@ -1,7 +1,7 @@
 ﻿
 namespace DoAn1
 {
-    partial class F_CreateUser
+    partial class F_AddGrant
     {
         /// <summary>
         /// Required designer variable.
@@ -29,16 +29,16 @@ namespace DoAn1
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chbGrantOption = new System.Windows.Forms.CheckBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.txbConfirmPass = new System.Windows.Forms.TextBox();
+            this.txbTableName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txbPassword = new System.Windows.Forms.TextBox();
+            this.cbbPrivilegeName = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txbUserName = new System.Windows.Forms.TextBox();
+            this.txbUserRoleName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnOk = new System.Windows.Forms.Button();
@@ -50,44 +50,46 @@ namespace DoAn1
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(101, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 17);
-            this.label1.TabIndex = 0;
-            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.chbGrantOption);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Location = new System.Drawing.Point(12, 22);
+            this.panel1.Location = new System.Drawing.Point(12, 11);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(564, 180);
-            this.panel1.TabIndex = 1;
+            this.panel1.TabIndex = 2;
+            // 
+            // chbGrantOption
+            // 
+            this.chbGrantOption.AutoSize = true;
+            this.chbGrantOption.Location = new System.Drawing.Point(248, 146);
+            this.chbGrantOption.Name = "chbGrantOption";
+            this.chbGrantOption.Size = new System.Drawing.Size(138, 21);
+            this.chbGrantOption.TabIndex = 4;
+            this.chbGrantOption.Text = "With grant option";
+            this.chbGrantOption.UseVisualStyleBackColor = true;
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.txbConfirmPass);
+            this.panel5.Controls.Add(this.txbTableName);
             this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(0, 134);
+            this.panel5.Location = new System.Drawing.Point(0, 96);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(561, 44);
             this.panel5.TabIndex = 3;
             // 
-            // txbConfirmPass
+            // txbTableName
             // 
-            this.txbConfirmPass.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txbConfirmPass.Location = new System.Drawing.Point(248, 2);
-            this.txbConfirmPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txbConfirmPass.Name = "txbConfirmPass";
-            this.txbConfirmPass.Size = new System.Drawing.Size(316, 34);
-            this.txbConfirmPass.TabIndex = 3;
-            this.txbConfirmPass.UseSystemPasswordChar = true;
+            this.txbTableName.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txbTableName.Location = new System.Drawing.Point(248, 2);
+            this.txbTableName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbTableName.Name = "txbTableName";
+            this.txbTableName.Size = new System.Drawing.Size(316, 34);
+            this.txbTableName.TabIndex = 3;
             // 
             // label4
             // 
@@ -95,29 +97,28 @@ namespace DoAn1
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(3, 2);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(181, 28);
+            this.label4.Size = new System.Drawing.Size(101, 28);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Confirm Password:";
+            this.label4.Text = "Tên bảng:";
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.txbPassword);
+            this.panel4.Controls.Add(this.cbbPrivilegeName);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(0, 69);
+            this.panel4.Location = new System.Drawing.Point(0, 48);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(561, 44);
             this.panel4.TabIndex = 2;
             // 
-            // txbPassword
+            // cbbPrivilegeName
             // 
-            this.txbPassword.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txbPassword.Location = new System.Drawing.Point(248, 8);
-            this.txbPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txbPassword.Name = "txbPassword";
-            this.txbPassword.Size = new System.Drawing.Size(324, 34);
-            this.txbPassword.TabIndex = 2;
-            this.txbPassword.UseSystemPasswordChar = true;
+            this.cbbPrivilegeName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbPrivilegeName.FormattingEnabled = true;
+            this.cbbPrivilegeName.Location = new System.Drawing.Point(248, 4);
+            this.cbbPrivilegeName.Name = "cbbPrivilegeName";
+            this.cbbPrivilegeName.Size = new System.Drawing.Size(310, 36);
+            this.cbbPrivilegeName.TabIndex = 1;
             // 
             // label3
             // 
@@ -125,13 +126,13 @@ namespace DoAn1
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(3, 2);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 28);
+            this.label3.Size = new System.Drawing.Size(112, 28);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Password:";
+            this.label3.Text = "Tên quyền:";
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.txbUserName);
+            this.panel3.Controls.Add(this.txbUserRoleName);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(3, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -139,14 +140,15 @@ namespace DoAn1
             this.panel3.Size = new System.Drawing.Size(558, 44);
             this.panel3.TabIndex = 1;
             // 
-            // txbUserName
+            // txbUserRoleName
             // 
-            this.txbUserName.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txbUserName.Location = new System.Drawing.Point(245, 8);
-            this.txbUserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txbUserName.Name = "txbUserName";
-            this.txbUserName.Size = new System.Drawing.Size(324, 34);
-            this.txbUserName.TabIndex = 1;
+            this.txbUserRoleName.Enabled = false;
+            this.txbUserRoleName.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txbUserRoleName.Location = new System.Drawing.Point(245, 8);
+            this.txbUserRoleName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbUserRoleName.Name = "txbUserRoleName";
+            this.txbUserRoleName.Size = new System.Drawing.Size(324, 34);
+            this.txbUserRoleName.TabIndex = 1;
             // 
             // label2
             // 
@@ -154,19 +156,19 @@ namespace DoAn1
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(3, 2);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 28);
+            this.label2.Size = new System.Drawing.Size(149, 28);
             this.label2.TabIndex = 0;
-            this.label2.Text = "User Name:";
+            this.label2.Text = "Tên user / role:";
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btnOk);
             this.panel2.Controls.Add(this.btnCancel);
-            this.panel2.Location = new System.Drawing.Point(9, 206);
+            this.panel2.Location = new System.Drawing.Point(12, 206);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(564, 66);
-            this.panel2.TabIndex = 2;
+            this.panel2.TabIndex = 3;
             // 
             // btnOk
             // 
@@ -194,7 +196,7 @@ namespace DoAn1
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             // 
-            // F_CreateUser
+            // F_AddGrant
             // 
             this.AcceptButton = this.btnOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -204,12 +206,12 @@ namespace DoAn1
             this.ClientSize = new System.Drawing.Size(588, 283);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "F_CreateUser";
+            this.Name = "F_AddGrant";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tạo User";
+            this.Text = "Cấp quyền";
+            this.Load += new System.EventHandler(this.F_AddGrant_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -218,25 +220,24 @@ namespace DoAn1
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox txbConfirmPass;
+        private System.Windows.Forms.TextBox txbTableName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox txbPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txbUserName;
+        private System.Windows.Forms.TextBox txbUserRoleName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.ComboBox cbbPrivilegeName;
+        private System.Windows.Forms.CheckBox chbGrantOption;
     }
 }

@@ -49,64 +49,70 @@ namespace DoAn1
             this.panel1.Controls.Add(this.btnLogin);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(12, 11);
+            this.panel1.Location = new System.Drawing.Point(10, 12);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(582, 206);
+            this.panel1.Size = new System.Drawing.Size(533, 219);
             this.panel1.TabIndex = 1;
             // 
             // btnExit
             // 
+            this.btnExit.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnExit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.btnExit.Location = new System.Drawing.Point(415, 147);
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Location = new System.Drawing.Point(372, 156);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(153, 53);
+            this.btnExit.Size = new System.Drawing.Size(158, 43);
             this.btnExit.TabIndex = 4;
             this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnLogin
             // 
-            this.btnLogin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.btnLogin.Location = new System.Drawing.Point(213, 147);
+            this.btnLogin.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(183, 156);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(153, 53);
+            this.btnLogin.Size = new System.Drawing.Size(158, 43);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Đăng nhập";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.txbPassWord);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(3, 62);
+            this.panel3.Location = new System.Drawing.Point(3, 66);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(571, 53);
+            this.panel3.Size = new System.Drawing.Size(530, 56);
             this.panel3.TabIndex = 1;
             // 
             // txbPassWord
             // 
             this.txbPassWord.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPassWord.Location = new System.Drawing.Point(210, 6);
+            this.txbPassWord.Location = new System.Drawing.Point(180, 6);
             this.txbPassWord.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbPassWord.Name = "txbPassWord";
-            this.txbPassWord.Size = new System.Drawing.Size(355, 38);
+            this.txbPassWord.Size = new System.Drawing.Size(347, 38);
             this.txbPassWord.TabIndex = 2;
             this.txbPassWord.UseSystemPasswordChar = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(3, 12);
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 29);
+            this.label2.Size = new System.Drawing.Size(126, 32);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mật khẩu:";
             // 
@@ -117,37 +123,37 @@ namespace DoAn1
             this.panel2.Location = new System.Drawing.Point(0, 2);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(571, 53);
+            this.panel2.Size = new System.Drawing.Size(533, 56);
             this.panel2.TabIndex = 0;
             // 
             // txbUserName
             // 
             this.txbUserName.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbUserName.Location = new System.Drawing.Point(213, 6);
+            this.txbUserName.Location = new System.Drawing.Point(183, 6);
             this.txbUserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbUserName.Name = "txbUserName";
-            this.txbUserName.Size = new System.Drawing.Size(358, 38);
+            this.txbUserName.Size = new System.Drawing.Size(350, 38);
             this.txbUserName.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(3, 12);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 29);
+            this.label1.Size = new System.Drawing.Size(184, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên đăng nhập:";
             // 
             // F_Login
             // 
             this.AcceptButton = this.btnLogin;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
-            this.ClientSize = new System.Drawing.Size(604, 232);
+            this.ClientSize = new System.Drawing.Size(555, 246);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "F_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

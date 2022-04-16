@@ -34,6 +34,7 @@ namespace DoAn1
         private void F_AddGrant_Load(object sender, EventArgs e)
         {
             _privileges = new List<string>() { "SELECT", "UPDATE", "INSERT", "DELETE", "ALL"};
+
             cbbPrivilegeName.DataSource = _privileges;
             txbUserRoleName.Text = _objectName;
         }
