@@ -134,11 +134,11 @@
     <Compile Include="F_Manager.Designer.cs">
       <DependentUpon>F_Manager.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_RevokeFromUser.cs">
+    <Compile Include="F_RevokeGrant.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_RevokeFromUser.Designer.cs">
-      <DependentUpon>F_RevokeFromUser.cs</DependentUpon>
+    <Compile Include="F_RevokeGrant.Designer.cs">
+      <DependentUpon>F_RevokeGrant.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -166,8 +166,8 @@
     <EmbeddedResource Include="F_Manager.resx">
       <DependentUpon>F_Manager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_RevokeFromUser.resx">
-      <DependentUpon>F_RevokeFromUser.cs</DependentUpon>
+    <EmbeddedResource Include="F_RevokeGrant.resx">
+      <DependentUpon>F_RevokeGrant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

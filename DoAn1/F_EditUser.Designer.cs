@@ -76,7 +76,7 @@ namespace DoAn1
             this.txbConfirmPass.Location = new System.Drawing.Point(248, 2);
             this.txbConfirmPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbConfirmPass.Name = "txbConfirmPass";
-            this.txbConfirmPass.Size = new System.Drawing.Size(316, 34);
+            this.txbConfirmPass.Size = new System.Drawing.Size(310, 34);
             this.txbConfirmPass.TabIndex = 3;
             this.txbConfirmPass.UseSystemPasswordChar = true;
             // 
@@ -106,7 +106,7 @@ namespace DoAn1
             this.txbPassword.Location = new System.Drawing.Point(248, 8);
             this.txbPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbPassword.Name = "txbPassword";
-            this.txbPassword.Size = new System.Drawing.Size(324, 34);
+            this.txbPassword.Size = new System.Drawing.Size(310, 34);
             this.txbPassword.TabIndex = 2;
             this.txbPassword.UseSystemPasswordChar = true;
             // 
@@ -137,7 +137,7 @@ namespace DoAn1
             this.txbUserName.Location = new System.Drawing.Point(245, 8);
             this.txbUserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbUserName.Name = "txbUserName";
-            this.txbUserName.Size = new System.Drawing.Size(324, 34);
+            this.txbUserName.Size = new System.Drawing.Size(310, 34);
             this.txbUserName.TabIndex = 1;
             // 
             // label2
