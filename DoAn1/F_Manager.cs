@@ -38,6 +38,7 @@ namespace DoAn1
             string query = "BEGIN proc_Roles; END;";
             DataTable data = DataProvider.Instance.ExcuteQuery(query);
             dtgvManageRole.DataSource = data;
+            dtgvManagePrivilegeRole.DataSource = data;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -133,6 +134,49 @@ namespace DoAn1
             addGrantDialog.ShowDialog();
             this.Show();
             LoadListRole();
+        }
+
+        private void btnDropRole_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string roleName = dtgvManageRole.CurrentRow.Cells["ROLE"].Value.ToString();
+                if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    //string query = "BEGIN proc_OracleScript; proc_DropUser('" + UserName + "'); END;";
+                    string query = "BEGIN proc_OracleScript; BEGIN proc_DropRole ( :n_rolename ); END; END;";
+                    OracleCommand cmd = DataProvider.Instance.ExcuteNonQuery(query, new object[] { roleName });
+                    MessageBox.Show("Role đã được xóa thành công!\n\n", "Kết quả");
+                    LoadListRole();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không thể xóa role!\n\n" + ex.Message, "Kết quả");
+            }
+        }
+
+        private void btnRemovePrivilegeForRole_Click(object sender, EventArgs e)
+        {
+            string roleName = dtgvManagePrivilegeRole.CurrentRow.Cells["ROLE"].Value.ToString();
+            F_RevokeGrant revokeGrantDialog = new F_RevokeGrant(roleName, (int)CurrentObject.ROLE);
+            revokeGrantDialog.ShowDialog();
+            this.Show();
+            LoadListRole();
+        }
+
+        private void btnRemovePrivilegeForUser_Click(object sender, EventArgs e)
+        {
+            string UserName = dtgvManagePrivilegeUser.CurrentRow.Cells["USERNAME"].Value.ToString();
+            F_RevokeGrant revokeGrantDialog = new F_RevokeGrant(UserName, (int)CurrentObject.USER);
+            revokeGrantDialog.ShowDialog();
+            this.Show();
+            LoadListUser();
+        }
+
+        private void btnAddRoleForUser_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

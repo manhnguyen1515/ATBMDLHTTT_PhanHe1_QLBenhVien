@@ -488,6 +488,7 @@ namespace DoAn1
             this.btnDropRole.TabIndex = 9;
             this.btnDropRole.Text = "Xóa Role";
             this.btnDropRole.UseVisualStyleBackColor = false;
+            this.btnDropRole.Click += new System.EventHandler(this.btnDropRole_Click);
             // 
             // btnCreateRole
             // 
@@ -566,6 +567,7 @@ namespace DoAn1
             this.btnRemovePrivilegeForUser.TabIndex = 10;
             this.btnRemovePrivilegeForUser.Text = "Thu hồi quyền";
             this.btnRemovePrivilegeForUser.UseVisualStyleBackColor = false;
+            this.btnRemovePrivilegeForUser.Click += new System.EventHandler(this.btnRemovePrivilegeForUser_Click);
             // 
             // btnAddRoleForUser
             // 
@@ -581,6 +583,7 @@ namespace DoAn1
             this.btnAddRoleForUser.TabIndex = 9;
             this.btnAddRoleForUser.Text = "Cấp Role";
             this.btnAddRoleForUser.UseVisualStyleBackColor = false;
+            this.btnAddRoleForUser.Click += new System.EventHandler(this.btnAddRoleForUser_Click);
             // 
             // btnAddPrivilegeForUser
             // 
@@ -647,6 +650,7 @@ namespace DoAn1
             this.btnRemovePrivilegeForRole.TabIndex = 10;
             this.btnRemovePrivilegeForRole.Text = "Thu hồi quyền";
             this.btnRemovePrivilegeForRole.UseVisualStyleBackColor = false;
+            this.btnRemovePrivilegeForRole.Click += new System.EventHandler(this.btnRemovePrivilegeForRole_Click);
             // 
             // btnAddPrivilegeForRole
             // 
