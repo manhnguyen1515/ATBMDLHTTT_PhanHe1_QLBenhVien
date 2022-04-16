@@ -31,6 +31,7 @@ namespace DoAn1
             DataTable data = DataProvider.Instance.ExcuteQuery(query);
             dtgvManageUser.DataSource = data;
             dtgvManagePrivilegeUser.DataSource = data;
+            dtgvUsers.DataSource = data;
         }
 
         private void LoadListRole()

@@ -186,9 +186,11 @@ namespace DoAn1
             // 
             // F_RevokeGrant
             // 
+            this.AcceptButton = this.btnOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(588, 274);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

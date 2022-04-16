@@ -36,20 +36,8 @@ namespace DoAn1
                 string privilege = txbPrivilegeName.Text;
                 string table = txbTableName.Text;
 
-                if (_currentObject == (int)CurrentObject.USER)
-                {
-                    string query = "BEGIN proc_OracleScript; BEGIN proc_RevokeFromUser( :n_privilege, :n_table , :n_objectName ); END; END;";
-                    OracleCommand cmd = DataProvider.Instance.ExcuteNonQuery(query, new object[] { privilege, table, _objectName });
-                }
-                else if (_currentObject == (int)CurrentObject.ROLE)
-                {
-                    string query = "BEGIN proc_OracleScript; BEGIN REVOKE_PRIVS_ROLE( :n_objectName , :n_privilege ); END; END;";
-                    OracleCommand cmd = DataProvider.Instance.ExcuteNonQuery(query, new object[] { _objectName , privilege });
-                }
-                else
-                {
-                    MessageBox.Show("Đối tượng không hợp lệ!\n\n", "Kết quả");
-                }
+                string query = "BEGIN proc_OracleScript; BEGIN proc_RevokeFromUser( :n_privilege, :n_table , :n_objectName ); END; END;";
+                OracleCommand cmd = DataProvider.Instance.ExcuteNonQuery(query, new object[] { privilege, table, _objectName });
                 MessageBox.Show("Thu hồi quyền thành công!\n\n", "Kết quả");
                 this.Close();
 
