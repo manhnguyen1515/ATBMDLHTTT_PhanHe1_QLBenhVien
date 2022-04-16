@@ -107,12 +107,21 @@
     <Compile Include="F_CreateUser.Designer.cs">
       <DependentUpon>F_CreateUser.cs</DependentUpon>
     </Compile>
+
     <Compile Include="F_EditUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="F_EditUser.Designer.cs">
       <DependentUpon>F_EditUser.cs</DependentUpon>
     </Compile>
+
+    <Compile Include="F_GrantRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_GrantRole.Designer.cs">
+      <DependentUpon>F_GrantRole.cs</DependentUpon>
+    </Compile>
+
     <Compile Include="F_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,9 +151,15 @@
     <EmbeddedResource Include="F_CreateUser.resx">
       <DependentUpon>F_CreateUser.cs</DependentUpon>
     </EmbeddedResource>
+    
+    <EmbeddedResource Include="F_GrantRole.resx">
+      <DependentUpon>F_GrantRole.cs</DependentUpon>
+    </EmbeddedResource>
+
     <EmbeddedResource Include="F_EditUser.resx">
       <DependentUpon>F_EditUser.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="F_Login.resx">
       <DependentUpon>F_Login.cs</DependentUpon>
     </EmbeddedResource>
