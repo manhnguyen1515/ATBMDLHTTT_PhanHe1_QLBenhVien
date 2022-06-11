@@ -31,13 +31,16 @@ namespace DoAn1.GUI.Patient
         {
             this.btnLogout = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txbProvince = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.txbHistoryFamily = new System.Windows.Forms.TextBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.txbRole = new System.Windows.Forms.TextBox();
+            this.txbDistrict = new System.Windows.Forms.TextBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.txbDrugAllergy = new System.Windows.Forms.TextBox();
@@ -46,24 +49,22 @@ namespace DoAn1.GUI.Patient
             this.txbMedicalHistory = new System.Windows.Forms.TextBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.txbAddress = new System.Windows.Forms.TextBox();
+            this.txbStreetName = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.txbCitizenId = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.txbBirthDay = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.txbGender = new System.Windows.Forms.TextBox();
+            this.txbNumberHome = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.txbFullname = new System.Windows.Forms.TextBox();
             this.btnUpdateInfo = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dtpkBirthDay = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -73,7 +74,6 @@ namespace DoAn1.GUI.Patient
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLogout
@@ -109,6 +109,33 @@ namespace DoAn1.GUI.Patient
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(778, 441);
             this.panel1.TabIndex = 5;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.txbProvince);
+            this.panel2.Location = new System.Drawing.Point(444, 291);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(334, 48);
+            this.panel2.TabIndex = 27;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 25);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Tỉnh/TP:";
+            // 
+            // txbProvince
+            // 
+            this.txbProvince.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbProvince.Location = new System.Drawing.Point(146, 7);
+            this.txbProvince.Name = "txbProvince";
+            this.txbProvince.Size = new System.Drawing.Size(182, 34);
+            this.txbProvince.TabIndex = 8;
             // 
             // label12
             // 
@@ -150,7 +177,7 @@ namespace DoAn1.GUI.Patient
             // panel13
             // 
             this.panel13.Controls.Add(this.label10);
-            this.panel13.Controls.Add(this.txbRole);
+            this.panel13.Controls.Add(this.txbDistrict);
             this.panel13.Location = new System.Drawing.Point(444, 222);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(334, 48);
@@ -166,13 +193,13 @@ namespace DoAn1.GUI.Patient
             this.label10.TabIndex = 7;
             this.label10.Text = "Quận/ Huyện:";
             // 
-            // txbRole
+            // txbDistrict
             // 
-            this.txbRole.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbRole.Location = new System.Drawing.Point(146, 7);
-            this.txbRole.Name = "txbRole";
-            this.txbRole.Size = new System.Drawing.Size(182, 34);
-            this.txbRole.TabIndex = 8;
+            this.txbDistrict.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbDistrict.Location = new System.Drawing.Point(146, 7);
+            this.txbDistrict.Name = "txbDistrict";
+            this.txbDistrict.Size = new System.Drawing.Size(182, 34);
+            this.txbDistrict.TabIndex = 8;
             // 
             // panel12
             // 
@@ -231,7 +258,7 @@ namespace DoAn1.GUI.Patient
             // panel10
             // 
             this.panel10.Controls.Add(this.label7);
-            this.panel10.Controls.Add(this.txbAddress);
+            this.panel10.Controls.Add(this.txbStreetName);
             this.panel10.Location = new System.Drawing.Point(444, 151);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(334, 48);
@@ -247,13 +274,13 @@ namespace DoAn1.GUI.Patient
             this.label7.TabIndex = 7;
             this.label7.Text = "Tên đường:";
             // 
-            // txbAddress
+            // txbStreetName
             // 
-            this.txbAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbAddress.Location = new System.Drawing.Point(146, 7);
-            this.txbAddress.Name = "txbAddress";
-            this.txbAddress.Size = new System.Drawing.Size(182, 34);
-            this.txbAddress.TabIndex = 8;
+            this.txbStreetName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbStreetName.Location = new System.Drawing.Point(146, 7);
+            this.txbStreetName.Name = "txbStreetName";
+            this.txbStreetName.Size = new System.Drawing.Size(182, 34);
+            this.txbStreetName.TabIndex = 8;
             // 
             // panel8
             // 
@@ -284,8 +311,8 @@ namespace DoAn1.GUI.Patient
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.dtpkBirthDay);
             this.panel7.Controls.Add(this.label5);
-            this.panel7.Controls.Add(this.txbBirthDay);
             this.panel7.Location = new System.Drawing.Point(3, 152);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(413, 48);
@@ -301,18 +328,10 @@ namespace DoAn1.GUI.Patient
             this.label5.TabIndex = 7;
             this.label5.Text = "Ngày sinh:";
             // 
-            // txbBirthDay
-            // 
-            this.txbBirthDay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbBirthDay.Location = new System.Drawing.Point(143, 10);
-            this.txbBirthDay.Name = "txbBirthDay";
-            this.txbBirthDay.Size = new System.Drawing.Size(267, 34);
-            this.txbBirthDay.TabIndex = 8;
-            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.label4);
-            this.panel6.Controls.Add(this.txbGender);
+            this.panel6.Controls.Add(this.txbNumberHome);
             this.panel6.Location = new System.Drawing.Point(444, 83);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(331, 48);
@@ -328,13 +347,13 @@ namespace DoAn1.GUI.Patient
             this.label4.TabIndex = 7;
             this.label4.Text = "Số nhà:";
             // 
-            // txbGender
+            // txbNumberHome
             // 
-            this.txbGender.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbGender.Location = new System.Drawing.Point(146, 7);
-            this.txbGender.Name = "txbGender";
-            this.txbGender.Size = new System.Drawing.Size(182, 34);
-            this.txbGender.TabIndex = 8;
+            this.txbNumberHome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNumberHome.Location = new System.Drawing.Point(146, 7);
+            this.txbNumberHome.Name = "txbNumberHome";
+            this.txbNumberHome.Size = new System.Drawing.Size(182, 34);
+            this.txbNumberHome.TabIndex = 8;
             // 
             // panel5
             // 
@@ -379,32 +398,13 @@ namespace DoAn1.GUI.Patient
             this.btnUpdateInfo.UseVisualStyleBackColor = false;
             this.btnUpdateInfo.Click += new System.EventHandler(this.btnUpdateInfo_Click);
             // 
-            // panel2
+            // dtpkBirthDay
             // 
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Location = new System.Drawing.Point(444, 291);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(334, 48);
-            this.panel2.TabIndex = 27;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 25);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Tỉnh/TP:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(146, 7);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(182, 34);
-            this.textBox1.TabIndex = 8;
+            this.dtpkBirthDay.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpkBirthDay.Location = new System.Drawing.Point(143, 12);
+            this.dtpkBirthDay.Name = "dtpkBirthDay";
+            this.dtpkBirthDay.Size = new System.Drawing.Size(267, 22);
+            this.dtpkBirthDay.TabIndex = 8;
             // 
             // F_Manage_Patient
             // 
@@ -417,8 +417,11 @@ namespace DoAn1.GUI.Patient
             this.Name = "F_Manage_Patient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang dành cho bệnh nhân";
+            this.Load += new System.EventHandler(this.F_Manage_Patient_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
             this.panel13.ResumeLayout(false);
@@ -437,8 +440,6 @@ namespace DoAn1.GUI.Patient
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -453,7 +454,7 @@ namespace DoAn1.GUI.Patient
         private System.Windows.Forms.TextBox txbHistoryFamily;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txbRole;
+        private System.Windows.Forms.TextBox txbDistrict;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txbDrugAllergy;
@@ -462,22 +463,22 @@ namespace DoAn1.GUI.Patient
         private System.Windows.Forms.TextBox txbMedicalHistory;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txbAddress;
+        private System.Windows.Forms.TextBox txbStreetName;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txbCitizenId;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txbBirthDay;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txbGender;
+        private System.Windows.Forms.TextBox txbNumberHome;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txbFullname;
         private System.Windows.Forms.Button btnUpdateInfo;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txbProvince;
+        private System.Windows.Forms.DateTimePicker dtpkBirthDay;
     }
 }
