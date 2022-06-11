@@ -1,4 +1,5 @@
 ﻿using DoAn1.DAO;
+using DoAn1.GUI.Patient;
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
@@ -36,9 +37,35 @@ namespace DoAn1
                     conn.Open();
                     if (DataProvider.Connection == null)
                         DataProvider.Connection = conn;
-                    F_Manager manager = new F_Manager();
+
+                    Form form = null;
+                   if (DataProvider.Instance.ExcuteQuery("SELECT GRANTED_ROLE FROM USER_ROLE_PRIVS WHERE USERNAME = USER AND GRANTED_ROLE = 'BACSI'").Rows.Count > 0)
+                   {
+                        form = new F_Manage_Doctor();
+                   }
+                   else if (DataProvider.Instance.ExcuteQuery("SELECT GRANTED_ROLE FROM USER_ROLE_PRIVS WHERE USERNAME = USER AND GRANTED_ROLE = 'BENHNHAN'").Rows.Count > 0)
+                    {
+                        form = new F_Manage_Patient();
+                    }
+                    else if (DataProvider.Instance.ExcuteQuery("SELECT GRANTED_ROLE FROM USER_ROLE_PRIVS WHERE USERNAME = USER AND GRANTED_ROLE = 'THANHTRA'").Rows.Count > 0)
+                    {
+                        //form = new F_Manage_Doctor();
+                    }
+                    else if (DataProvider.Instance.ExcuteQuery("SELECT GRANTED_ROLE FROM USER_ROLE_PRIVS WHERE USERNAME = USER AND GRANTED_ROLE = 'CSYT'").Rows.Count > 0)
+                    {
+                        //form = new F_Manage_Doctor();
+                    }
+                    else if (DataProvider.Instance.ExcuteQuery("SELECT GRANTED_ROLE FROM USER_ROLE_PRIVS WHERE USERNAME = USER AND GRANTED_ROLE = 'NGHIENCUU'").Rows.Count > 0)
+                    {
+                        //form = new F_Manage_Doctor();
+                    }
+                    else
+                   {
+                       form = new F_Manager();
+                   }
+                    
                     this.Hide();
-                    manager.ShowDialog();
+                    form.ShowDialog();
                     this.Show();
                 }
                 catch (Exception ex)

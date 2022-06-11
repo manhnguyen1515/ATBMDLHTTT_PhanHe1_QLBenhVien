@@ -89,34 +89,34 @@
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
-    <Compile Include="F_GrantPrivilege.cs">
+    <Compile Include="GUI\Admin\F_GrantPrivilege.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_GrantPrivilege.Designer.cs">
+    <Compile Include="GUI\Admin\F_GrantPrivilege.Designer.cs">
       <DependentUpon>F_GrantPrivilege.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_CreateRole.cs">
+    <Compile Include="GUI\Admin\F_CreateRole.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_CreateRole.Designer.cs">
+    <Compile Include="GUI\Admin\F_CreateRole.Designer.cs">
       <DependentUpon>F_CreateRole.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_CreateUser.cs">
+    <Compile Include="GUI\Admin\F_CreateUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_CreateUser.Designer.cs">
+    <Compile Include="GUI\Admin\F_CreateUser.Designer.cs">
       <DependentUpon>F_CreateUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_EditUser.cs">
+    <Compile Include="GUI\Admin\F_EditUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_EditUser.Designer.cs">
+    <Compile Include="GUI\Admin\F_EditUser.Designer.cs">
       <DependentUpon>F_EditUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_GrantRole.cs">
+    <Compile Include="GUI\Admin\F_GrantRole.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_GrantRole.Designer.cs">
+    <Compile Include="GUI\Admin\F_GrantRole.Designer.cs">
       <DependentUpon>F_GrantRole.cs</DependentUpon>
     </Compile>
     <Compile Include="F_Login.cs">
@@ -125,44 +125,61 @@
     <Compile Include="F_Login.Designer.cs">
       <DependentUpon>F_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_Manager.cs">
+    <Compile Include="GUI\Admin\F_Manager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_Manager.Designer.cs">
+    <Compile Include="GUI\Admin\F_Manager.Designer.cs">
       <DependentUpon>F_Manager.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_RevokeGrant.cs">
+    <Compile Include="GUI\Doctor\F_Manage_Doctor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_RevokeGrant.Designer.cs">
+    <Compile Include="GUI\Doctor\F_Manage_Doctor.Designer.cs">
+      <DependentUpon>F_Manage_Doctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin\F_RevokeGrant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\F_RevokeGrant.Designer.cs">
       <DependentUpon>F_RevokeGrant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Patient\F_Manage_Patient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Patient\F_Manage_Patient.Designer.cs">
+      <DependentUpon>F_Manage_Patient.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="F_GrantPrivilege.resx">
+    <EmbeddedResource Include="GUI\Admin\F_GrantPrivilege.resx">
       <DependentUpon>F_GrantPrivilege.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_CreateRole.resx">
+    <EmbeddedResource Include="GUI\Admin\F_CreateRole.resx">
       <DependentUpon>F_CreateRole.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_CreateUser.resx">
+    <EmbeddedResource Include="GUI\Admin\F_CreateUser.resx">
       <DependentUpon>F_CreateUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_GrantRole.resx">
+    <EmbeddedResource Include="GUI\Admin\F_GrantRole.resx">
       <DependentUpon>F_GrantRole.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_EditUser.resx">
+    <EmbeddedResource Include="GUI\Admin\F_EditUser.resx">
       <DependentUpon>F_EditUser.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="F_Login.resx">
       <DependentUpon>F_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_Manager.resx">
+    <EmbeddedResource Include="GUI\Admin\F_Manager.resx">
       <DependentUpon>F_Manager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_RevokeGrant.resx">
+    <EmbeddedResource Include="GUI\Admin\F_RevokeGrant.resx">
       <DependentUpon>F_RevokeGrant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Doctor\F_Manage_Doctor.resx">
+      <DependentUpon>F_Manage_Doctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Patient\F_Manage_Patient.resx">
+      <DependentUpon>F_Manage_Patient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -196,6 +213,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
