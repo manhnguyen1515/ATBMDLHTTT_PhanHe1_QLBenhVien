@@ -1,4 +1,5 @@
 ﻿using DoAn1.DAO;
+using DoAn1.GUI.Inspector;
 using DoAn1.GUI.Patient;
 using Oracle.ManagedDataAccess.Client;
 using System;
@@ -41,15 +42,15 @@ namespace DoAn1
                     Form form = null;
                    if (DataProvider.Instance.ExcuteQuery("SELECT GRANTED_ROLE FROM USER_ROLE_PRIVS WHERE USERNAME = USER AND GRANTED_ROLE = 'BACSI'").Rows.Count > 0)
                    {
-                        form = new F_Manage_Doctor();
+                        form = new F_Doctor();
                    }
                    else if (DataProvider.Instance.ExcuteQuery("SELECT GRANTED_ROLE FROM USER_ROLE_PRIVS WHERE USERNAME = USER AND GRANTED_ROLE = 'BENHNHAN'").Rows.Count > 0)
                     {
-                        form = new F_Manage_Patient();
+                        form = new F_Patient();
                     }
                     else if (DataProvider.Instance.ExcuteQuery("SELECT GRANTED_ROLE FROM USER_ROLE_PRIVS WHERE USERNAME = USER AND GRANTED_ROLE = 'THANHTRA'").Rows.Count > 0)
                     {
-                        //form = new F_Manage_Doctor();
+                        form = new F_Inspector();
                     }
                     else if (DataProvider.Instance.ExcuteQuery("SELECT GRANTED_ROLE FROM USER_ROLE_PRIVS WHERE USERNAME = USER AND GRANTED_ROLE = 'CSYT'").Rows.Count > 0)
                     {

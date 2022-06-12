@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace DoAn1.GUI.Patient
 {
-    public partial class F_Manage_Patient : Form
+    public partial class F_Patient : Form
     {
-        public F_Manage_Patient()
+        public F_Patient()
         {
             InitializeComponent();
         }
