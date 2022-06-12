@@ -131,11 +131,11 @@
     <Compile Include="GUI\Admin\F_Manager.Designer.cs">
       <DependentUpon>F_Manager.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Doctor\F_Manage_Doctor.cs">
+    <Compile Include="GUI\Doctor\F_Doctor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Doctor\F_Manage_Doctor.Designer.cs">
-      <DependentUpon>F_Manage_Doctor.cs</DependentUpon>
+    <Compile Include="GUI\Doctor\F_Doctor.Designer.cs">
+      <DependentUpon>F_Doctor.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Admin\F_RevokeGrant.cs">
       <SubType>Form</SubType>
@@ -143,11 +143,17 @@
     <Compile Include="GUI\Admin\F_RevokeGrant.Designer.cs">
       <DependentUpon>F_RevokeGrant.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Patient\F_Manage_Patient.cs">
+    <Compile Include="GUI\Inspector\F_Inspector.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Patient\F_Manage_Patient.Designer.cs">
-      <DependentUpon>F_Manage_Patient.cs</DependentUpon>
+    <Compile Include="GUI\Inspector\F_Inspector.Designer.cs">
+      <DependentUpon>F_Inspector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Patient\F_Patient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Patient\F_Patient.Designer.cs">
+      <DependentUpon>F_Patient.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -175,11 +181,14 @@
     <EmbeddedResource Include="GUI\Admin\F_RevokeGrant.resx">
       <DependentUpon>F_RevokeGrant.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Doctor\F_Manage_Doctor.resx">
-      <DependentUpon>F_Manage_Doctor.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Doctor\F_Doctor.resx">
+      <DependentUpon>F_Doctor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Patient\F_Manage_Patient.resx">
-      <DependentUpon>F_Manage_Patient.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Inspector\F_Inspector.resx">
+      <DependentUpon>F_Inspector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Patient\F_Patient.resx">
+      <DependentUpon>F_Patient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

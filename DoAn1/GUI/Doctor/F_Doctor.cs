@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace DoAn1
 {
-    public partial class F_Manage_Doctor : Form
+    public partial class F_Doctor : Form
     {
-        public F_Manage_Doctor()
+        public F_Doctor()
         {
             InitializeComponent();
         }

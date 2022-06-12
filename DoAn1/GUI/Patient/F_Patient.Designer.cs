@@ -1,7 +1,7 @@
 ﻿
 namespace DoAn1.GUI.Patient
 {
-    partial class F_Manage_Patient
+    partial class F_Patient
     {
         /// <summary>
         /// Required designer variable.
