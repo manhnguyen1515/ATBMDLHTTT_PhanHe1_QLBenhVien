@@ -41,7 +41,12 @@ namespace DoAn1
                         DataProvider.Connection = conn;
                    DataProvider.Connection.Open();
                    Form form = null;
-                   if (DataProvider.Instance.ExcuteQuery("SELECT GRANTED_ROLE FROM USER_ROLE_PRIVS WHERE USERNAME = USER AND GRANTED_ROLE = 'BACSI'").Rows.Count > 0)
+
+                    if (DataProvider.Instance.ExcuteQuery("SELECT GRANTED_ROLE FROM USER_ROLE_PRIVS WHERE USERNAME = USER AND GRANTED_ROLE = 'DBA'").Rows.Count > 0)
+                    {
+                        form = new F_Manager();
+                    }
+                    else if (DataProvider.Instance.ExcuteQuery("SELECT GRANTED_ROLE FROM USER_ROLE_PRIVS WHERE USERNAME = USER AND GRANTED_ROLE = 'BACSI'").Rows.Count > 0)
                    {
                         form = new F_Doctor();
                    }
@@ -63,8 +68,11 @@ namespace DoAn1
                     }
                     else
                    {
-                       form = new F_Manager();
-                   }
+                        MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!\n", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        DataProvider.Connection.Close();
+                        DataProvider.Connection = null;
+                        return;
+                    }
 
                     this.Hide();
                     form.ShowDialog();
