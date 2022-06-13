@@ -1,6 +1,8 @@
 ﻿using DoAn1.DAO;
+using DoAn1.GUI.Facility;
 using DoAn1.GUI.Inspector;
 using DoAn1.GUI.Patient;
+using DoAn1.GUI.Researcher;
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
@@ -35,11 +37,10 @@ namespace DoAn1
             {
                 try
                 {
-                    conn.Open();
                     if (DataProvider.Connection == null)
                         DataProvider.Connection = conn;
-
-                    Form form = null;
+                   DataProvider.Connection.Open();
+                   Form form = null;
                    if (DataProvider.Instance.ExcuteQuery("SELECT GRANTED_ROLE FROM USER_ROLE_PRIVS WHERE USERNAME = USER AND GRANTED_ROLE = 'BACSI'").Rows.Count > 0)
                    {
                         form = new F_Doctor();
@@ -54,25 +55,25 @@ namespace DoAn1
                     }
                     else if (DataProvider.Instance.ExcuteQuery("SELECT GRANTED_ROLE FROM USER_ROLE_PRIVS WHERE USERNAME = USER AND GRANTED_ROLE = 'CSYT'").Rows.Count > 0)
                     {
-                        //form = new F_Manage_Doctor();
+                        form = new F_Facility();
                     }
                     else if (DataProvider.Instance.ExcuteQuery("SELECT GRANTED_ROLE FROM USER_ROLE_PRIVS WHERE USERNAME = USER AND GRANTED_ROLE = 'NGHIENCUU'").Rows.Count > 0)
                     {
-                        //form = new F_Manage_Doctor();
+                        form = new F_Researcher();
                     }
                     else
                    {
                        form = new F_Manager();
                    }
-                    
+
                     this.Hide();
                     form.ShowDialog();
                     this.Show();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    conn.Close();
+                    MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!\n" + ex.Message, "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DataProvider.Connection.Close();
                     DataProvider.Connection = null;
                 }
             }

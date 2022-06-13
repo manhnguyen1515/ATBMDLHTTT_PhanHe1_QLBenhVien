@@ -143,6 +143,24 @@
     <Compile Include="GUI\Admin\F_RevokeGrant.Designer.cs">
       <DependentUpon>F_RevokeGrant.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Facility\F_AddRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Facility\F_AddRecord.Designer.cs">
+      <DependentUpon>F_AddRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Facility\F_AddService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Facility\F_AddService.Designer.cs">
+      <DependentUpon>F_AddService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Facility\F_Facility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Facility\F_Facility.Designer.cs">
+      <DependentUpon>F_Facility.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Inspector\F_Inspector.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +172,12 @@
     </Compile>
     <Compile Include="GUI\Patient\F_Patient.Designer.cs">
       <DependentUpon>F_Patient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Researcher\F_Researcher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Researcher\F_Researcher.Designer.cs">
+      <DependentUpon>F_Researcher.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -184,11 +208,23 @@
     <EmbeddedResource Include="GUI\Doctor\F_Doctor.resx">
       <DependentUpon>F_Doctor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Facility\F_AddRecord.resx">
+      <DependentUpon>F_AddRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Facility\F_AddService.resx">
+      <DependentUpon>F_AddService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Facility\F_Facility.resx">
+      <DependentUpon>F_Facility.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Inspector\F_Inspector.resx">
       <DependentUpon>F_Inspector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Patient\F_Patient.resx">
       <DependentUpon>F_Patient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Researcher\F_Researcher.resx">
+      <DependentUpon>F_Researcher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
