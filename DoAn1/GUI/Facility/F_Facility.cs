@@ -109,5 +109,14 @@ namespace DoAn1.GUI.Facility
             }
         }
 
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            if (DataProvider.Connection != null)
+            {
+                DataProvider.Connection.Close();
+                DataProvider.Connection = null;
+            }
+            this.Close();
+        }
     }
 }

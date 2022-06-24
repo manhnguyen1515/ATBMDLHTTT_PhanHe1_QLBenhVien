@@ -89,6 +89,12 @@
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="GUI\Admin\F_CreateEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\F_CreateEmployee.Designer.cs">
+      <DependentUpon>F_CreateEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Admin\F_GrantPrivilege.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,12 @@
     </Compile>
     <Compile Include="GUI\Admin\F_Manager.Designer.cs">
       <DependentUpon>F_Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin\F_UpdateFacility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\F_UpdateFacility.Designer.cs">
+      <DependentUpon>F_UpdateFacility.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Doctor\F_Doctor.cs">
       <SubType>Form</SubType>
@@ -181,6 +193,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\Admin\F_CreateEmployee.resx">
+      <DependentUpon>F_CreateEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Admin\F_GrantPrivilege.resx">
       <DependentUpon>F_GrantPrivilege.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Admin\F_RevokeGrant.resx">
       <DependentUpon>F_RevokeGrant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin\F_UpdateFacility.resx">
+      <DependentUpon>F_UpdateFacility.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Doctor\F_Doctor.resx">
       <DependentUpon>F_Doctor.cs</DependentUpon>
