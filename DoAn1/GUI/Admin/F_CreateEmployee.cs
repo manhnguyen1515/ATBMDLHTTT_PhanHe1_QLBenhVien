@@ -86,16 +86,18 @@ namespace DoAn1.GUI.Admin
             string phone = txbPhone.Text;
             string facility = cbbFacilities.SelectedItem.ToString();
             string address = txbAddress.Text;
-            string birthDay = $"TO_DATE('{dtpkBirthDay.Value.ToShortDateString()}', 'mm/dd/yyyy')";
+            //string birthDay = $"TO_DATE('{dtpkBirthDay.Value.ToShortDateString()}', 'mm/dd/yyyy')";
+            var birthDay = dtpkBirthDay.Value;
             string role = cbbRoles.SelectedItem.ToString();
             string major = txbMajor.Text;
 
-            string query = $"INSERT INTO ADMIN.NHANVIEN(MANV, HOTEN, PHAI, NGAYSINH, CMND, QUEQUAN, SODT, CSYT, VAITRO, CHUYENKHOA) VALUES" +
-                $"('{id}', N'{fullName}', '{gender}', {birthDay}, '{citizenId}', N'{address}', '{phone}', '{facility}', N'{role}', N'{major}') ";
+            string query = "BEGIN PROC_INSERTNHANVIEN( :manv , :hoten , :phai , :ngaysinh , :cmnd , :quequan , " +
+                ":sodt , :csyt , :vaitro , :chuyenkhoa ); END;";
 
             try
             {
-                var command = DataProvider.Instance.ExcuteNonQuery(query);
+                var command = DataProvider.Instance.ExcuteNonQuery(query, new object[] { id, fullName, gender, birthDay, citizenId, address, phone, facility, role, major });
+
                 if (command != null)
                 {
                     MessageBox.Show("Thêm thành công!");
