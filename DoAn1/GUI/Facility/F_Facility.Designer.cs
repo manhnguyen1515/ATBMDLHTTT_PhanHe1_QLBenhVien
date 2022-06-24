@@ -230,6 +230,7 @@ namespace DoAn1.GUI.Facility
             this.btnLogout.TabIndex = 5;
             this.btnLogout.Text = "Đăng xuất";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // F_Facility
             // 

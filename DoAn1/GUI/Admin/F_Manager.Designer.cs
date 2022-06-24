@@ -88,6 +88,20 @@ namespace DoAn1
             this.btnAddPrivilegeForRole = new System.Windows.Forms.Button();
             this.dtgvManagePrivilegeRole = new System.Windows.Forms.DataGridView();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.tpEmployee = new System.Windows.Forms.TabPage();
+            this.tpPatient = new System.Windows.Forms.TabPage();
+            this.tpFacility = new System.Windows.Forms.TabPage();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.btnCreateUserEmployee = new System.Windows.Forms.Button();
+            this.dtgvEmployees = new System.Windows.Forms.DataGridView();
+            this.btnAddEmployee = new System.Windows.Forms.Button();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.btnCreateUserPatient = new System.Windows.Forms.Button();
+            this.dtgvPatients = new System.Windows.Forms.DataGridView();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.btnUpdateFacility = new System.Windows.Forms.Button();
+            this.btnCreateFacility = new System.Windows.Forms.Button();
+            this.dtgvFacilities = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.tcManager.SuspendLayout();
             this.tpUsers.SuspendLayout();
@@ -122,6 +136,15 @@ namespace DoAn1
             this.tabPage2.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvManagePrivilegeRole)).BeginInit();
+            this.tpEmployee.SuspendLayout();
+            this.tpPatient.SuspendLayout();
+            this.tpFacility.SuspendLayout();
+            this.panel14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvEmployees)).BeginInit();
+            this.panel15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvPatients)).BeginInit();
+            this.panel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvFacilities)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -139,6 +162,9 @@ namespace DoAn1
             this.tcManager.Controls.Add(this.tpPrivileges);
             this.tcManager.Controls.Add(this.tpManageUser_Role);
             this.tcManager.Controls.Add(this.tpManagePrivileges);
+            this.tcManager.Controls.Add(this.tpEmployee);
+            this.tcManager.Controls.Add(this.tpPatient);
+            this.tcManager.Controls.Add(this.tpFacility);
             this.tcManager.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tcManager.Location = new System.Drawing.Point(3, 12);
             this.tcManager.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -863,6 +889,190 @@ namespace DoAn1
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // tpEmployee
+            // 
+            this.tpEmployee.Controls.Add(this.panel14);
+            this.tpEmployee.Controls.Add(this.dtgvEmployees);
+            this.tpEmployee.Location = new System.Drawing.Point(4, 34);
+            this.tpEmployee.Name = "tpEmployee";
+            this.tpEmployee.Padding = new System.Windows.Forms.Padding(3);
+            this.tpEmployee.Size = new System.Drawing.Size(1090, 457);
+            this.tpEmployee.TabIndex = 4;
+            this.tpEmployee.Text = "Quản lý nhân viên";
+            this.tpEmployee.UseVisualStyleBackColor = true;
+            // 
+            // tpPatient
+            // 
+            this.tpPatient.Controls.Add(this.panel15);
+            this.tpPatient.Controls.Add(this.dtgvPatients);
+            this.tpPatient.Location = new System.Drawing.Point(4, 34);
+            this.tpPatient.Name = "tpPatient";
+            this.tpPatient.Padding = new System.Windows.Forms.Padding(3);
+            this.tpPatient.Size = new System.Drawing.Size(1090, 457);
+            this.tpPatient.TabIndex = 5;
+            this.tpPatient.Text = "Quản lý bệnh nhân";
+            this.tpPatient.UseVisualStyleBackColor = true;
+            // 
+            // tpFacility
+            // 
+            this.tpFacility.Controls.Add(this.panel16);
+            this.tpFacility.Controls.Add(this.dtgvFacilities);
+            this.tpFacility.Location = new System.Drawing.Point(4, 34);
+            this.tpFacility.Name = "tpFacility";
+            this.tpFacility.Padding = new System.Windows.Forms.Padding(3);
+            this.tpFacility.Size = new System.Drawing.Size(1090, 457);
+            this.tpFacility.TabIndex = 6;
+            this.tpFacility.Text = "Quản lý CSYT";
+            this.tpFacility.UseVisualStyleBackColor = true;
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.btnAddEmployee);
+            this.panel14.Controls.Add(this.btnCreateUserEmployee);
+            this.panel14.Location = new System.Drawing.Point(776, 6);
+            this.panel14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(310, 448);
+            this.panel14.TabIndex = 3;
+            // 
+            // btnCreateUserEmployee
+            // 
+            this.btnCreateUserEmployee.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnCreateUserEmployee.FlatAppearance.BorderSize = 0;
+            this.btnCreateUserEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateUserEmployee.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateUserEmployee.ForeColor = System.Drawing.Color.White;
+            this.btnCreateUserEmployee.Location = new System.Drawing.Point(84, 104);
+            this.btnCreateUserEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCreateUserEmployee.Name = "btnCreateUserEmployee";
+            this.btnCreateUserEmployee.Size = new System.Drawing.Size(180, 43);
+            this.btnCreateUserEmployee.TabIndex = 1;
+            this.btnCreateUserEmployee.Text = "Tạo user hàng loạt";
+            this.btnCreateUserEmployee.UseVisualStyleBackColor = false;
+            this.btnCreateUserEmployee.Click += new System.EventHandler(this.btnCreateUserEmployee_Click);
+            // 
+            // dtgvEmployees
+            // 
+            this.dtgvEmployees.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dtgvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvEmployees.GridColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dtgvEmployees.Location = new System.Drawing.Point(5, 3);
+            this.dtgvEmployees.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgvEmployees.Name = "dtgvEmployees";
+            this.dtgvEmployees.RowHeadersWidth = 51;
+            this.dtgvEmployees.RowTemplate.Height = 29;
+            this.dtgvEmployees.Size = new System.Drawing.Size(765, 449);
+            this.dtgvEmployees.TabIndex = 2;
+            // 
+            // btnAddEmployee
+            // 
+            this.btnAddEmployee.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnAddEmployee.FlatAppearance.BorderSize = 0;
+            this.btnAddEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddEmployee.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddEmployee.ForeColor = System.Drawing.Color.White;
+            this.btnAddEmployee.Location = new System.Drawing.Point(84, 289);
+            this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddEmployee.Name = "btnAddEmployee";
+            this.btnAddEmployee.Size = new System.Drawing.Size(180, 43);
+            this.btnAddEmployee.TabIndex = 2;
+            this.btnAddEmployee.Text = "Thêm nhân viên";
+            this.btnAddEmployee.UseVisualStyleBackColor = false;
+            this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
+            // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.btnCreateUserPatient);
+            this.panel15.Location = new System.Drawing.Point(776, 6);
+            this.panel15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(310, 448);
+            this.panel15.TabIndex = 5;
+            // 
+            // btnCreateUserPatient
+            // 
+            this.btnCreateUserPatient.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnCreateUserPatient.FlatAppearance.BorderSize = 0;
+            this.btnCreateUserPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateUserPatient.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateUserPatient.ForeColor = System.Drawing.Color.White;
+            this.btnCreateUserPatient.Location = new System.Drawing.Point(78, 182);
+            this.btnCreateUserPatient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCreateUserPatient.Name = "btnCreateUserPatient";
+            this.btnCreateUserPatient.Size = new System.Drawing.Size(180, 43);
+            this.btnCreateUserPatient.TabIndex = 1;
+            this.btnCreateUserPatient.Text = "Tạo user hàng loạt";
+            this.btnCreateUserPatient.UseVisualStyleBackColor = false;
+            this.btnCreateUserPatient.Click += new System.EventHandler(this.btnCreateUserPatient_Click);
+            // 
+            // dtgvPatients
+            // 
+            this.dtgvPatients.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dtgvPatients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvPatients.GridColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dtgvPatients.Location = new System.Drawing.Point(5, 3);
+            this.dtgvPatients.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgvPatients.Name = "dtgvPatients";
+            this.dtgvPatients.RowHeadersWidth = 51;
+            this.dtgvPatients.RowTemplate.Height = 29;
+            this.dtgvPatients.Size = new System.Drawing.Size(765, 449);
+            this.dtgvPatients.TabIndex = 4;
+            // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.btnUpdateFacility);
+            this.panel16.Controls.Add(this.btnCreateFacility);
+            this.panel16.Location = new System.Drawing.Point(776, 6);
+            this.panel16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(310, 448);
+            this.panel16.TabIndex = 5;
+            // 
+            // btnUpdateFacility
+            // 
+            this.btnUpdateFacility.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnUpdateFacility.FlatAppearance.BorderSize = 0;
+            this.btnUpdateFacility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateFacility.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateFacility.ForeColor = System.Drawing.Color.White;
+            this.btnUpdateFacility.Location = new System.Drawing.Point(84, 289);
+            this.btnUpdateFacility.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpdateFacility.Name = "btnUpdateFacility";
+            this.btnUpdateFacility.Size = new System.Drawing.Size(170, 43);
+            this.btnUpdateFacility.TabIndex = 2;
+            this.btnUpdateFacility.Text = "Cập nhật";
+            this.btnUpdateFacility.UseVisualStyleBackColor = false;
+            this.btnUpdateFacility.Click += new System.EventHandler(this.btnUpdateFacility_Click);
+            // 
+            // btnCreateFacility
+            // 
+            this.btnCreateFacility.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnCreateFacility.FlatAppearance.BorderSize = 0;
+            this.btnCreateFacility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateFacility.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateFacility.ForeColor = System.Drawing.Color.White;
+            this.btnCreateFacility.Location = new System.Drawing.Point(84, 117);
+            this.btnCreateFacility.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCreateFacility.Name = "btnCreateFacility";
+            this.btnCreateFacility.Size = new System.Drawing.Size(170, 43);
+            this.btnCreateFacility.TabIndex = 1;
+            this.btnCreateFacility.Text = "Thêm cơ sở y tế";
+            this.btnCreateFacility.UseVisualStyleBackColor = false;
+            this.btnCreateFacility.Click += new System.EventHandler(this.btnCreateFacility_Click);
+            // 
+            // dtgvFacilities
+            // 
+            this.dtgvFacilities.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dtgvFacilities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvFacilities.GridColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dtgvFacilities.Location = new System.Drawing.Point(5, 3);
+            this.dtgvFacilities.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgvFacilities.Name = "dtgvFacilities";
+            this.dtgvFacilities.RowHeadersWidth = 51;
+            this.dtgvFacilities.RowTemplate.Height = 29;
+            this.dtgvFacilities.Size = new System.Drawing.Size(765, 449);
+            this.dtgvFacilities.TabIndex = 4;
+            // 
             // F_Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -911,6 +1121,15 @@ namespace DoAn1
             this.tabPage2.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvManagePrivilegeRole)).EndInit();
+            this.tpEmployee.ResumeLayout(false);
+            this.tpPatient.ResumeLayout(false);
+            this.tpFacility.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvEmployees)).EndInit();
+            this.panel15.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvPatients)).EndInit();
+            this.panel16.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvFacilities)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -977,6 +1196,20 @@ namespace DoAn1
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Splitter splitter4;
         private System.Windows.Forms.Button btnViewAllRolePrivs;
+        private System.Windows.Forms.TabPage tpEmployee;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Button btnAddEmployee;
+        private System.Windows.Forms.Button btnCreateUserEmployee;
+        private System.Windows.Forms.DataGridView dtgvEmployees;
+        private System.Windows.Forms.TabPage tpPatient;
+        private System.Windows.Forms.TabPage tpFacility;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Button btnCreateUserPatient;
+        private System.Windows.Forms.DataGridView dtgvPatients;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Button btnUpdateFacility;
+        private System.Windows.Forms.Button btnCreateFacility;
+        private System.Windows.Forms.DataGridView dtgvFacilities;
     }
 }
 

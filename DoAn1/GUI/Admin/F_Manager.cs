@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
+using DoAn1.GUI.Admin;
 
 namespace DoAn1
 {
@@ -23,6 +24,9 @@ namespace DoAn1
         {
             LoadListUser();
             LoadListRole();
+            LoadListEmployee();
+            LoadListPatient();
+            LoadListFacility();
         }
 
         private void LoadListUser()
@@ -40,6 +44,27 @@ namespace DoAn1
             DataTable data = DataProvider.Instance.ExcuteQuery(query);
             dtgvManageRole.DataSource = data;
             dtgvManagePrivilegeRole.DataSource = data;
+        }
+
+        private void LoadListEmployee()
+        {
+            string query = "SELECT * FROM ADMIN.NHANVIEN";
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            dtgvEmployees.DataSource = data;
+        }
+
+        private void LoadListPatient()
+        {
+            string query = "SELECT * FROM ADMIN.BENHNHAN";
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            dtgvPatients.DataSource = data;
+        }
+
+        private void LoadListFacility()
+        {
+            string query = "SELECT * FROM ADMIN.CSYT";
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            dtgvFacilities.DataSource = data;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -219,6 +244,61 @@ namespace DoAn1
             string query = "BEGIN proc_RolePrivileges( :n_rolename ); END;";
             DataTable data = DataProvider.Instance.ExcuteQuery(query, new object[] { name });
             dtgvRolePrivs.DataSource = data;
+        }
+
+        private void btnCreateUserEmployee_Click(object sender, EventArgs e)
+        {
+            string query = "BEGIN PROC_CREATENHANVIEN; END;";
+            OracleCommand data = DataProvider.Instance.ExcuteNonQuery(query);
+            if(data != null)
+            {
+                MessageBox.Show("Tạo thành công");
+                LoadListEmployee();
+            }
+            else
+            {
+                MessageBox.Show("Không có user nào được tạo!", "Lỗi không tạo được user");
+            }
+        }
+
+        private void btnAddEmployee_Click(object sender, EventArgs e)
+        {
+            F_CreateEmployee dialog = new F_CreateEmployee();
+            dialog.ShowDialog();
+            this.Show();
+            LoadListEmployee();
+        }
+
+        private void btnCreateUserPatient_Click(object sender, EventArgs e)
+        {
+            string query = "BEGIN PROC_CREATEBENHNHAN; END;";
+            OracleCommand data = DataProvider.Instance.ExcuteNonQuery(query);
+            if (data != null)
+            {
+                MessageBox.Show("Tạo thành công");
+                LoadListPatient();
+            }
+            else
+            {
+                MessageBox.Show("Không có user nào được tạo!", "Lỗi không tạo được user");
+            }
+        }
+
+        private void btnCreateFacility_Click(object sender, EventArgs e)
+        {
+            F_UpdateFacility dialog = new F_UpdateFacility();
+            dialog.ShowDialog();
+            this.Show();
+            LoadListFacility();
+        }
+
+        private void btnUpdateFacility_Click(object sender, EventArgs e)
+        {
+            string id = dtgvFacilities.CurrentRow.Cells["MACSYT"].Value.ToString();
+            F_UpdateFacility dialog = new F_UpdateFacility(id);
+            dialog.ShowDialog();
+            this.Show();
+            LoadListFacility();
         }
     }
 }
