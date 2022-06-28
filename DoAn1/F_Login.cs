@@ -42,7 +42,7 @@ namespace DoAn1
                    DataProvider.Connection.Open();
                    Form form = null;
 
-                    if (DataProvider.Instance.ExcuteQuery("SELECT GRANTED_ROLE FROM USER_ROLE_PRIVS WHERE USERNAME = USER AND GRANTED_ROLE = 'DBA'").Rows.Count > 0)
+                    if (DataProvider.Instance.ExcuteQuery("SELECT GRANTED_ROLE FROM USER_ROLE_PRIVS WHERE USERNAME = USER AND GRANTED_ROLE = 'DBA_QLYTE'").Rows.Count > 0)
                     {
                         form = new F_Manager();
                     }
