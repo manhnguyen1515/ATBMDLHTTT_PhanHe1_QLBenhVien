@@ -106,7 +106,7 @@ namespace DoAn1.GUI.Researcher
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Cập nhật không thành công\n" + ex.Message);
+                MessageBox.Show("Cập nhật không thành công\n");
                 this.Close();
             }
         }

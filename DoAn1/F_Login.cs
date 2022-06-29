@@ -78,9 +78,9 @@ namespace DoAn1
                     form.ShowDialog();
                     this.Show();
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!\n" + ex.Message, "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!\n", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     DataProvider.Connection.Close();
                     DataProvider.Connection = null;
                 }

@@ -79,9 +79,9 @@ namespace DoAn1
                 DataTable data = DataProvider.Instance.ExcuteQuery(query, new object[] { patientInfo, patientInfo });
                 dtgvPatient.DataSource = data;
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                MessageBox.Show("Không tìm thấy bệnh nhân\n" + ex.Message);
+                MessageBox.Show("Không tìm thấy bệnh nhân\n");
                 this.Close();
             }
         }
@@ -130,9 +130,9 @@ namespace DoAn1
                     MessageBox.Show("Cập nhật thành công!");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Cập nhật không thành công\n" + ex.Message);
+                MessageBox.Show("Cập nhật không thành công\n");
                 this.Close();
             }
         }
