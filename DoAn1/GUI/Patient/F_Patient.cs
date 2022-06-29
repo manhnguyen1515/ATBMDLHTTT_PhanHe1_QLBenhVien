@@ -28,16 +28,19 @@ namespace DoAn1.GUI.Patient
             string query = "SELECT * FROM ADMIN.BENHNHAN WHERE MABN = USER";
             DataTable data = DataProvider.Instance.ExcuteQuery(query);
 
-            txbFullname.Text = data.Rows[0].Field<string>(2);
-            txbCitizenId.Text = data.Rows[0].Field<string>(3);
-            dtpkBirthDay.Value = data.Rows[0].Field<DateTime>(4);
-            txbNumberHome.Text = data.Rows[0].Field<string>(5);
-            txbStreetName.Text = data.Rows[0].Field<string>(6);
-            txbDistrict.Text = data.Rows[0].Field<string>(7);
-            txbProvince.Text = data.Rows[0].Field<string>(8);
-            txbMedicalHistory.Text = data.Rows[0].Field<string>(9);
-            txbHistoryFamily.Text = data.Rows[0].Field<string>(10);
-            txbDrugAllergy.Text = data.Rows[0].Field<string>(11);
+            if(data.Rows.Count > 0)
+            {
+                txbFullname.Text = data.Rows[0].Field<string>(2);
+                txbCitizenId.Text = data.Rows[0].Field<string>(3);
+                dtpkBirthDay.Value = data.Rows[0].Field<DateTime>(4);
+                txbNumberHome.Text = data.Rows[0].Field<string>(5);
+                txbStreetName.Text = data.Rows[0].Field<string>(6);
+                txbDistrict.Text = data.Rows[0].Field<string>(7);
+                txbProvince.Text = data.Rows[0].Field<string>(8);
+                txbMedicalHistory.Text = data.Rows[0].Field<string>(9);
+                txbHistoryFamily.Text = data.Rows[0].Field<string>(10);
+                txbDrugAllergy.Text = data.Rows[0].Field<string>(11);
+            }
         }
 
         private void btnUpdateInfo_Click(object sender, EventArgs e)

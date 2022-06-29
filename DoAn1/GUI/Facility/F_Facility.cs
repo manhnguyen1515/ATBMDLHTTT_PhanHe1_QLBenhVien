@@ -53,16 +53,18 @@ namespace DoAn1.GUI.Facility
         {
             string query = "SELECT * FROM ADMIN.NHANVIEN WHERE MANV = USER";
             DataTable data = DataProvider.Instance.ExcuteQuery(query);
-
-            txbFullname.Text = data.Rows[0].Field<string>(1);
-            txbGender.Text = data.Rows[0].Field<string>(2);
-            dtpkBirthDay.Value = data.Rows[0].Field<DateTime>(3);
-            txbCitizenId.Text = data.Rows[0].Field<string>(4);
-            txbAddress.Text = data.Rows[0].Field<string>(5);
-            txbPhone.Text = data.Rows[0].Field<string>(6);
-            txbFacility.Text = data.Rows[0].Field<string>(7);
-            txbRole.Text = data.Rows[0].Field<string>(8);
-            txbDepartment.Text = data.Rows[0].Field<string>(9);
+            if(data.Rows.Count > 0)
+            {
+                txbFullname.Text = data.Rows[0].Field<string>(1);
+                txbGender.Text = data.Rows[0].Field<string>(2);
+                dtpkBirthDay.Value = data.Rows[0].Field<DateTime>(3);
+                txbCitizenId.Text = data.Rows[0].Field<string>(4);
+                txbAddress.Text = data.Rows[0].Field<string>(5);
+                txbPhone.Text = data.Rows[0].Field<string>(6);
+                txbFacility.Text = data.Rows[0].Field<string>(7);
+                txbRole.Text = data.Rows[0].Field<string>(8);
+                txbDepartment.Text = data.Rows[0].Field<string>(9);
+            }
         }
 
         private void cbbRecord_SelectedIndexChanged(object sender, EventArgs e)
