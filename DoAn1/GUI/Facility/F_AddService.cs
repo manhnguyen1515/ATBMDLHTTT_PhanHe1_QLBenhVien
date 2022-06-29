@@ -46,7 +46,7 @@ namespace DoAn1.GUI.Facility
             {
                 string error = "Lỗi! Không thể thêm. \n\n";
                 if (ex.Message.Contains("ORA-20000"))
-                    error += "Ngày không hợp lệ. Vui lòng chọn các ngày từ 5 đến 27 trong tháng này.";
+                    error += "Ngày không hợp lệ. Vui lòng quay lại vào các ngày từ 5 đến 27 hàng tháng.";
                 MessageBox.Show(error, "Kết quả");
             }
 
