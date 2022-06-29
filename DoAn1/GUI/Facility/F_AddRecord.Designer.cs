@@ -209,10 +209,10 @@ namespace DoAn1.GUI.Facility
             // 
             // dtpkNgay
             // 
-            this.dtpkNgay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpkNgay.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpkNgay.Location = new System.Drawing.Point(106, 5);
             this.dtpkNgay.Name = "dtpkNgay";
-            this.dtpkNgay.Size = new System.Drawing.Size(261, 34);
+            this.dtpkNgay.Size = new System.Drawing.Size(261, 27);
             this.dtpkNgay.TabIndex = 1;
             // 
             // label4
