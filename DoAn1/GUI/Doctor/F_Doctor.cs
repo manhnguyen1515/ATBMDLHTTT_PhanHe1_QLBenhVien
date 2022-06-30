@@ -72,11 +72,12 @@ namespace DoAn1
         {
             try
             {
-                string query = "SELECT * FROM ADMIN.BENHNHAN JOIN ADMIN.HSBA ON BENHNHAN.MABN = HSBA.MABN " +
-                    "WHERE BENHNHAN.MABN = :p_info OR BENHNHAN.CMND = :p_info ";
+                //string query = "SELECT * FROM ADMIN.BENHNHAN JOIN ADMIN.HSBA ON BENHNHAN.MABN = HSBA.MABN " +
+                //  "WHERE BENHNHAN.MABN = :p_info OR BENHNHAN.CMND = :p_info ";
 
+                string query = "BEGIN ADMIN.PROC_TIMKIEMBENHNHAN( :p_info ); END;";
                 var patientInfo = txbPatientInfo.Text;
-                DataTable data = DataProvider.Instance.ExcuteQuery(query, new object[] { patientInfo, patientInfo });
+                DataTable data = DataProvider.Instance.ExcuteQuery(query, new object[] { patientInfo });
                 dtgvPatient.DataSource = data;
             }
             catch(Exception)
