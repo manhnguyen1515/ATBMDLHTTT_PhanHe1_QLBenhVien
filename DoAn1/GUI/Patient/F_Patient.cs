@@ -25,7 +25,7 @@ namespace DoAn1.GUI.Patient
 
         private void LoadInfo()
         {
-            string query = "SELECT * FROM ADMIN.BENHNHAN WHERE MABN = USER";
+            string query = "SELECT * FROM ADMIN.BENHNHAN";
             DataTable data = DataProvider.Instance.ExcuteQuery(query);
 
             if(data.Rows.Count > 0)
@@ -68,8 +68,8 @@ namespace DoAn1.GUI.Patient
                                "    TINHTP = :province ," +
                                "    TIENSUBENH = :medicalhistory ," +
                                "    TIENSUBENHGD = :historyfamily ," +
-                               "    DIUNGTHUOC = :drugallergy " +
-                               "WHERE MABN = USER";
+                               "    DIUNGTHUOC = :drugallergy " 
+                               ;
 
                 var cmd = DataProvider.Instance.ExcuteNonQuery(query, new object[]
                 {
